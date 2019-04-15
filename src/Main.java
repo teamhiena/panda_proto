@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int chosenUseCase = 0;
 
-        System.out.println("Udv a tesztprogramunkban! Kilepes '0'-val\n");
+        System.out.println("Udv1 a tesztprogramunkban! Kilepes '0'-val\n");
         do {
             mainMenu.show();
             chosenUseCase = Integer.parseInt(scanner.nextLine());
