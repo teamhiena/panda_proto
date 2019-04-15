@@ -18,17 +18,11 @@ public class Timer {
 	}
 
 	public void Tick() {
-		Logger.enter(this, "Tick", new ArrayList<>());
 		//TODO
 		elapsedTime++;
-		Logger.exit(this, "Tick", null);
 	}
 
-	public int getTime() {
-		Logger.enter(this, "getTime", new ArrayList<>());
-		Logger.exit(this, "getTime", null);
-		return elapsedTime;
-	}
+	public int getTime() { return elapsedTime; }
 
 	public void addSteppable(Steppable s) {
 		Steppable.add(s);
@@ -53,10 +47,6 @@ public class Timer {
 	/**Noveli az idot parameterkent kapott masodperccel es megnezi lejart-e az ido, ha igen cselekszik
 	 */
 	public void increaseTime(int t) {
-		ArrayList<Object> par = new ArrayList<>(); 
-		par.add(t);
-		Logger.enter(this,"increaseTime", par);
-
 		elapsedTime += t;
 
 		//Minden eltelt Tick-re pollingoljuk, hogy lejart-e az ido hogy nyert-e az Orangutan
@@ -75,8 +65,6 @@ public class Timer {
 			//Es vegul lejart az ido, game-over.
 			game.gameOver();
 		}
-
-		Logger.exit(this, "increaseTime", null);
 	}
 
 	//Visszaadja a NonEnterableEntity interfeszu entitasokat

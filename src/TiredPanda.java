@@ -17,13 +17,10 @@ public class TiredPanda extends Panda {
 	 * A Panda egy f Fotel hatasa ala kerul.
 	 */
     public void affectedBy(Fotel f) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(f);
-    	Logger.enter(this, "affectedBy", par);
     	//TODO
 		//El kell helyeznie a sajat magat a mezon.
 		tile.setAnimal(null);
 		f.getTile().setAnimal(this);
 		this.setTile(f.getTile());
-		Logger.exit(this, "affectedBy", null);
     }
 }

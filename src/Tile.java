@@ -15,20 +15,11 @@ public class Tile {
     /**
      * A Tile-rol elenged egy Animalt, azaz ezutan ures.
      */
-    public void releaseAnimal(){
-        Logger.enter(this, "releaseAnimal", new ArrayList<>());
-        animal=null;
-        Logger.exit(this, "releaseAnimal", null);
-    }
+    public void releaseAnimal(){ animal=null; }
     /*
      * Beallitja az Animal-t a Tile-ra.
      */
-    public void setAnimal(Animal a) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(a);
-        Logger.enter(this, "setAnimal", par);
-        animal=a;
-        Logger.exit(this, "setAnimal", null);
-    }
+    public void setAnimal(Animal a) {animal=a;}
     /**
      * Atveszi a Pandat
      * Ha az adott Tile-on all allat, akkor nem veszi at az allatot
@@ -37,12 +28,8 @@ public class Tile {
      * Ha nincs rajta semmi, akkor atveszi
      */
     public boolean receiveAnimal(Panda p) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(p);
-        Logger.enter(this, "receiveAnimal", par);
-
         boolean success=true;
         if(animal != null) { //ha van ott allat akk fix off
-            Logger.exit(this, "receiveAnimal", false);
             return false;
         }
         else if (entity != null) { //ha van ott entity akkor attol fugg
@@ -53,7 +40,6 @@ public class Tile {
             p.getTile().setAnimal(null);
             p.setTile(this);
         }
-        Logger.exit(this, "receiveAnimal", success);
         return success;
     }
 
@@ -71,9 +57,6 @@ public class Tile {
      */
 
     public boolean receiveAnimal(Orangutan o) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(o);
-        Logger.enter(this, "receiveAnimal", par);
-
         boolean success=true;
         if(entity != null)//Ha van ott entiy akk megprobalok belelepni.
             success = entity.stepIn(o); //Ha nem enterable vagy panda ul benne akkor false.
@@ -88,63 +71,27 @@ public class Tile {
 
         //Nincs ott allat de olyan entity van amibe (most) nem lehet belelepni
         //pl nonenterableentity vagy egy hasznalatban levo fotel
-
-        Logger.exit(this, "receiveAnimal", success);
         return success;
     }
     // Eltavolitja a Pandat a Tile szomszedos Tile-jainak feliratkozoi kozul
     public void removePandaFromNeighborSubbedPandas(Panda p) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(p);
-        Logger.enter(this, "removePandaFromNeighborSubbedPandas", par);
         for(Tile nt:neighbors)
             nt.removeSubbedPanda(p);
-        Logger.exit(this, "removePandaFromNeighborSubbedPandas", null);
     }
     // Panda feliratkozasa a Tile-ra
-    public void addSubbedPanda(Panda p) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(p);
-        Logger.enter(this, "addSubbedPanda", par);
-        subbedPandas.add(p);
-        Logger.exit(this, "removePandaFromNeighborSubbedPandas", null);
-    }
+    public void addSubbedPanda(Panda p) { subbedPandas.add(p); }
     // Eltavolitja a pandat a feliratkozoi kozul
-    public void removeSubbedPanda(Panda p) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(p);
-        Logger.enter(this, "removeSubbedPanda", par);
-        subbedPandas.remove(p);
-        Logger.exit(this, "removeSubbedPanda", null);
-    }
+    public void removeSubbedPanda(Panda p) { subbedPandas.remove(p); }
     // Visszaadja az entitast ami rajta all.
-    public Entity getEntity() {
-        Logger.enter(this, "getEntity", new ArrayList<>());
-        Logger.exit(this, "getEntity", null);
-        return entity;
-    }
+    public Entity getEntity() { return entity; }
     // Visszaadja a szomszedos Tile-okat
-    public ArrayList<Tile> getNeighbors(){
-        Logger.enter(this, "getNeighbors", new ArrayList<>());
-        Logger.exit(this, "getNeighbors", null);
-        return neighbors;
-    }
+    public ArrayList<Tile> getNeighbors(){ return neighbors; }
     // Visszaadja a feliratkozott pandakat
-    public ArrayList<Panda> getSubbedPandas() {
-        Logger.enter(this, "getSubbedPandas", new ArrayList<>());
-        Logger.exit(this, "getSubbedPandas", null);
-        return subbedPandas;
-    }
+    public ArrayList<Panda> getSubbedPandas() { return subbedPandas; }
     // Visszaadja a Tile-on allo allatot.
-    public Animal getAnimal() {
-        Logger.enter(this, "getAnimal", new ArrayList<>());
-        Logger.exit(this, "getAnimal", animal);
-        return animal;
-    }
+    public Animal getAnimal() { return animal; }
     // Hozzaad egy szomszedos csempet a szomszedlistahoz
-    public void addNeighbor(Tile t) {
-        ArrayList<Object> par = new ArrayList<>(); par.add(t);
-        Logger.enter(this, "addNeighbor", par);
-        neighbors.add(t);
-        Logger.exit(this, "addNeighbor", null);
-    }
+    public void addNeighbor(Tile t) { neighbors.add(t); }
     //Visszadja a feliratkozott pandakat.
     public String writeSubbedPandas(){
         String ret = null;

@@ -17,39 +17,23 @@ public abstract class Panda extends Animal{
 	 * Hozzaad egy csempet a panda subbedTiles listajahoz.
 	 */
 
-	public void addSubbedTile(Tile t) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(t);
-		Logger.enter(this, "addSubbedTile", par);
-		subbedTiles.add(t);
-		Logger.exit(this, "addSubbedTile", null);
-	}
+	public void addSubbedTile(Tile t) { subbedTiles.add(t); }
 
 	/**
 	 * Kitorli a feliratkozott csempek listajat.
 	 */
-	public void clearSubbedTiles() {
-		Logger.enter(this, "clearSubbedTiles", new ArrayList<>());
-		subbedTiles.clear();
-		Logger.exit(this, "clearSubbedTiles", null);
-	}
+	public void clearSubbedTiles() { subbedTiles.clear(); }
 
 	/**
 	 * A tile adattag getter fuggvenye.
 	 */
-	public Tile getTile() {
-		Logger.enter(this, "getTile", new ArrayList<>());
-		Logger.exit(this, "getTile", tile);
-		return tile;
-	}
+	public Tile getTile() { return tile; }
 
 	/**
 	 * A pandat a parameterben megadott mezore mozgatjuk.
 	 */
 	@Override
 	public boolean step(Tile newTile) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(newTile);
-		Logger.enter(this, "step", par);
-
 		boolean success = newTile.receiveAnimal(this);
 		if(success) {
 			tile.removePandaFromNeighborSubbedPandas(this); //Panda eltavolitasa a szomszedokrol.
@@ -64,8 +48,6 @@ public abstract class Panda extends Animal{
 			tile.setAnimal(null);
 			tile=newTile;*/
 		}
-
-		Logger.exit(this, "step", success);
 		return success;
 	}
 
@@ -74,12 +56,8 @@ public abstract class Panda extends Animal{
 	 */
 	@Override
 	public boolean getCaughtBy(Orangutan o) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(o);
-		Logger.enter(this, "getCaughtBy", par);
-		
 		if(isFollowing()) //Mar elkapott pandat nem kapunk el
 		{
-			Logger.exit(this, "getCaughtBy", false);
 			return false;
 		}
 		
@@ -92,8 +70,6 @@ public abstract class Panda extends Animal{
 		}
 		o.setFollowedBy(this);
 		//o.setIsFollowedBy(true);
-		
-		Logger.exit(this, "getCaughtBy", true);
 		return true;
 	}
 	/**

@@ -50,41 +50,26 @@ public class GameMap {
 	 * Visszater egy veletlenszeruen kivalasztott szekreny kijarattal.
 	 */
 	public Tile getRandomWardrobeExitTile() {
-		Logger.enter(this, "getRandomWardrobeExitTile", new ArrayList<>());
 		Random vel = new Random();
 		Tile t = listGetterMap.get(Key.WardrobeExit).get(vel.nextInt(listGetterMap.get(Key.WardrobeExit).size()));
-		Logger.exit(this, "getRandomWardrobeExitTile", t);
 		return t;
 	}
 
 	/**
 	 * Visszaadja az exit csempet.
 	 */
-	public Tile getExitTile() {
-		Logger.enter(this, "getExitTile", new ArrayList<>());
-		ExitTile t = exit;
-		Logger.exit(this, "getExitTile", t);
-		return t;
-	}
+	public Tile getExitTile() { return exit; }
 
 	/**
 	 * Visszaadja a bejarat csempet
 	 */
-	public Tile getEntryTile() {
-		Logger.enter(this, "getEntryTile", new ArrayList<>());
-		EntryTile t = entry;
-		Logger.exit(this, "getEntryTile", t);
-		return t;
-	}
+	public Tile getEntryTile() { return entry; }
 
 	/**
 	 * Visszaadja az parameterkent kapott tipusu csempeket.
 	 */
 	public ArrayList<Tile> getSpecificTiles(GameMap.Key key){
-		ArrayList<Object> par = new ArrayList<>(); par.add(key);
-		Logger.enter(this, "getSpecificTiles", par);
 		ArrayList<Tile> ret = listGetterMap.get(key);
-		Logger.exit(this, "getSpecificTiles", null); //Mivel egy listat adunk, ezt nagyon nehez abrazolni
 		return ret;
 	}
 
@@ -95,9 +80,7 @@ public class GameMap {
 	 * Visszaadja a gyenge csempeket.
 	 */
 	public ArrayList<WeakTile> getWeakTiles(){
-		Logger.enter(this, "getWeakTiles", new ArrayList<>());
 		//TODO
-		Logger.exit(this, "getWeakTiles", null); //Mivel egy listat adunk, ezt nagyon nehez abrazolni
 		return new ArrayList<WeakTile>();
 	}
 	/**

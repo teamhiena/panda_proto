@@ -15,9 +15,6 @@ public class Fotel extends Entity implements MakesEffect{
 	 * @return
 	 */
 	public boolean stepIn(Orangutan o) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(o);
-		Logger.enter(this, "stepIn", par);
-		Logger.exit(this, "stepIn", false);
 		return false;
 	}
 
@@ -38,21 +35,15 @@ public class Fotel extends Entity implements MakesEffect{
 	 * Megmondja, hogy van-e valaki a fotelban.
 	 */
 	public boolean isEmpty() {
-		Logger.enter(this, "isEmpty", new ArrayList<>());
-		boolean ret = false;
-		if(tile.getAnimal() == null) ret = true;
-		Logger.exit(this, "isEmpty", ret);
-		return ret;
+		if(tile.getAnimal() == null) return true;
+		return false;
 	}
 
 	/**
 	 * Csokkenti a hatra levo idot.
 	 */
 	public void decrTimeLeft() {
-		Logger.enter(this, "decrTimeLeft", new ArrayList<>());
-		if(!isEmpty())//
-			timeLeft--;
-		
+		if(!isEmpty()) timeLeft--;
 		if(timeLeft<=0) {
 			boolean success;
 			do {
@@ -60,37 +51,26 @@ public class Fotel extends Entity implements MakesEffect{
 			} while(!success);
 			
 		}
-		
-		Logger.exit(this, "decrTimeLeft", null);
 	}
 	/**
 	 * Ujrainditja az ido szamlalojat.
 	 */
-	public void resetTimeLeft() {
-		Logger.enter(this, "resetTimeLeft", new ArrayList<>());
-		timeLeft=100;
-		Logger.exit(this, "resetTimeLeft", null);
-		}
-
+	public void resetTimeLeft() { timeLeft = 100; }
 	/**
 	 * Visszater egy random pandaval. Azert jo, mert lehet hogy
 	 * tobb panda van egyszerre fotel mellett, ilyenkor az egyik ul csak bele.
 	 */
     public Panda getRandomSubbedPanda(){
-    	Logger.enter(this, "getRandomSubbedPanda", new ArrayList<>());
     	int a = tile.getSubbedPandas().size();
-    	Random vel=new Random();
-    	Panda ret  =tile.getSubbedPandas().get(vel.nextInt(tile.getSubbedPandas().size()));
-    	Logger.exit(this, "getRandomSubbedPanda", ret);
+    	Random vel = new Random();
+    	Panda ret  = tile.getSubbedPandas().get(vel.nextInt(tile.getSubbedPandas().size()));
     	return ret;
     }
 
 	@Override
 	public void makeEffect() {
-		Logger.enter(this, "makeEffect", new ArrayList<>());
 		Panda p = getRandomSubbedPanda();
 		p.step(tile);
-		Logger.exit(this, "makeEffect", null);		
 	}
 	public Tile getEnteredFrom(){ return enteredFrom; }
 	public long getTimeLeft() { return timeLeft; }
