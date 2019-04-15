@@ -91,6 +91,8 @@ public class Fotel extends Entity implements MakesEffect{
 		Panda p = getRandomSubbedPanda();
 		p.step(tile);
 		Logger.exit(this, "makeEffect", null);		
-	}   
+	}
+	public Tile getEnteredFrom(){ return enteredFrom; }
+	public long getTimeLeft() { return timeLeft; }
 }
 

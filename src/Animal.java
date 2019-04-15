@@ -114,4 +114,7 @@ public abstract class Animal implements Steppable{
      * Az allatot elkapja egy orangutan. Leszarmazottakban felulirando.
      */
     public abstract boolean getCaughtBy(Orangutan o);
+    public Tile getNextTile(){ return nextTile; }
+    public Panda getFollowedBy(){ return followedBy; }
+    public Panda getFollowing() { return following; }
 }

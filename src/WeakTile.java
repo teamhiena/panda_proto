@@ -48,7 +48,6 @@ public class WeakTile extends Tile{
 		Logger.exit(this, "isBroken", isBroken);
     	return isBroken;
     }
-	
 	/**
 	 * ha broken, die()-t hiv
 	 * ha allat, return false
@@ -101,4 +100,5 @@ public class WeakTile extends Tile{
 		return success;
 
     }
+    public int getNumOfSteps(){ return numOfSteps; }
 }

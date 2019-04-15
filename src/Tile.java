@@ -145,4 +145,20 @@ public class Tile {
         neighbors.add(t);
         Logger.exit(this, "addNeighbor", null);
     }
+    //Visszadja a feliratkozott pandakat.
+    public String writeSubbedPandas(){
+        String ret = null;
+        for(int i = 0; i < subbedPandas.size(); i++) {
+            ret += subbedPandas.get(i).toString() + " ";
+        }
+        return ret;
+    }
+    //Visszadja a szomszedokat.
+    public String writeNeighbors(){
+        String ret = null;
+        for(int i = 0; i < neighbors.size(); i++) {
+            ret += neighbors.get(i).toString() + " ";
+        }
+        return ret;
+    }
 }
