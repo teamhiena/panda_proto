@@ -27,7 +27,6 @@ public class Menu {
     }
 
     public void manageUseCase(int chosenUseCase){
-    	Logger.disable();
         switch(chosenUseCase) {            //A valasznak megfelelo eset inditasa
             case 0: System.out.println("Kilepes..");
                 break;

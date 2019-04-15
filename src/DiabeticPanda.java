@@ -12,14 +12,11 @@ public class DiabeticPanda extends Panda {
 		hatesEntity=GameMap.Key.Automat;
 	}
 
-	//METÓoUSOK
+	//METÓDUSOK
 	/**
 	 * A pandat megijeszti egy csokiautomata.
 	 */
     public void affectedBy(Automat a) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(a);
-		Logger.enter(this, "affectedBy", par);
 		//TODO
-		Logger.exit(this, "affectedBy", null);
     }
 }

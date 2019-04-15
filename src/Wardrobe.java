@@ -20,11 +20,7 @@ public class Wardrobe extends Entity {
 	 */
 	@Override
 	public boolean stepIn(Orangutan o) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(o);
-		Logger.enter(this, "stepIn", par);
-
 		if(o.getTile()!= entrance) {
-			Logger.exit(this, "stepIn", false);
 			return false;
 		}
 		boolean success;
@@ -36,8 +32,6 @@ public class Wardrobe extends Entity {
 			}
 				
 		}while(!success);
-
-		Logger.exit(this, "stepIn", success);
 		return success;
 	}
 
@@ -46,11 +40,7 @@ public class Wardrobe extends Entity {
 	 */
 	@Override
 	public boolean stepIn(Panda p) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(p);
-		Logger.enter(this, "stepIn", par);
-
 		if(p.getTile()!= entrance) {
-			Logger.exit(this, "stepIn", false);
 			return false;
 		}
 		boolean success;
@@ -62,8 +52,6 @@ public class Wardrobe extends Entity {
 				previousExitTile=null;
 			}
 		}while(!success);
-
-		Logger.exit(this, "stepIn", success);
 		return true;
 	}
 
@@ -73,4 +61,6 @@ public class Wardrobe extends Entity {
 	public void setPreviousExitTile(Tile t) {
 		previousExitTile=t;
 	}
+	public Tile getPreviousExitTile(){ return previousExitTile; }
+	public Tile getEntrance(){ return entrance; }
 }

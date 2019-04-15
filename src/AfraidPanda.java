@@ -13,16 +13,11 @@ public class AfraidPanda extends Panda {
 	}
 
 	//METODUSOK
-
 	/**
 	 * A pandat megijeszti egy jatekgep.
 	 */
     public void affectedBy(Arcade a) {
-		ArrayList<Object> par = new ArrayList<>(); par.add(a);
-		Logger.enter(this, "affectedBy", par);
 		//TODO Rekurzivan elengedik egymast
-		Logger.exit(this, "affectedBy", null);
-
     }
 }
  
