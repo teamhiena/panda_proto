@@ -17,6 +17,6 @@ public class Main {
             mainMenu.manageUseCase(chosenUseCase);
         } while (chosenUseCase != 0);
         scanner.close();
-        System.out.println("Viszlat!");
+        System.out.println("Viszlat!!");
     }
 }
