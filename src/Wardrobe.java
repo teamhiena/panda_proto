@@ -65,6 +65,9 @@ public class Wardrobe extends Entity {
 	public void setPreviousExitTile(Tile t) {
 		previousExitTile=t;
 	}
+
+	public void setEntrance(Tile t){entrance=t;}
+
 	public Tile getPreviousExitTile(){ return previousExitTile; }
 	public Tile getEntrance(){ return entrance; }
 }

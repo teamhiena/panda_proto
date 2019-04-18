@@ -42,6 +42,10 @@ public class Fotel extends Entity implements MakesEffect{
 	/**
 	 * Csokkenti a hatra levo idot.
 	 */
+	public void setTimeLeft(int n){
+		timeLeft=n;
+	}
+
 	public void decrTimeLeft() {
 		if(!isEmpty()) timeLeft--;
 		if(timeLeft<=0) {

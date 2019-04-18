@@ -10,6 +10,10 @@ public class WeakTile extends Tile{
 		if(numOfSteps<=0)
 			isBroken=true;
 	}
+
+	public void setNumOfSteps(int s){
+		numOfSteps=s;
+	}
 	
 	/**
 	 * ha broken, die()-t hiv
