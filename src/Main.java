@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -8,14 +9,30 @@ public class Main {
 
         Menu mainMenu = new Menu();
         Scanner scanner = new Scanner(System.in);
-        int chosenUseCase = 0;
-
+        int chosenUseCase = 1; //GoMBI  tesztel
+        InputLanguage inlang=new InputLanguage();
         System.out.println("Udv1 a tesztprogramunkban! Kilepes '0'-val\n");
-        do {
+
+        String input=scanner.nextLine();
+
+        //Object ret=null;
+        while (!input.equals("exit")){
+
+            //ret=inlang.compile(input.split(" "));
+            inlang.compile(input.split(" "));
+            input=scanner.nextLine();
+            //System.out.println(inlang.variables.get("p"));
+
+        }
+
+        /*do {
             mainMenu.show();
-            chosenUseCase = Integer.parseInt(scanner.nextLine());
+            input=scanner.nextLine();
+            chosenUseCase = Integer.parseInt(input);
             mainMenu.manageUseCase(chosenUseCase);
-        } while (chosenUseCase != 0);
+            inlang.compile(input.split(" "));
+        } while (chosenUseCase != 0);*/
+
         scanner.close();
         System.out.println("Viszlat!!");
     }

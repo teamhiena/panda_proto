@@ -9,6 +9,10 @@ public class Orangutan extends Animal {
         game = g;
     }
 
+    public Orangutan() {
+
+    }
+
     //METODUSOK
     /**
      * @param t(Tile): Errre a mezore szeretnenk leptetni az orangutant.

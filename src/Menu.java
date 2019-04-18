@@ -1,3 +1,5 @@
+import java.util.logging.Logger;
+
 /**
  * A szkeleton program (use-case-eket tartalmaz) menujet kezelo osztalyly.
  */
@@ -26,7 +28,11 @@ public class Menu {
                 +"A valasztott UseCase: ");
     }
 
-    public void manageUseCase(int chosenUseCase){
+    public void manageUseCase(int chosenUseCase) {
+        System.out.println("Gombi itt most tesztelt valamit");
+    }
+
+   /* public void manageUseCase(int chosenUseCase){
         switch(chosenUseCase) {            //A valasznak megfelelo eset inditasa
             case 0: System.out.println("Kilepes..");
                 break;
@@ -81,7 +87,7 @@ public class Menu {
         t1.setAnimal(o);
 
         //Loggerbe regisztralas
-        Logger.enable();;
+        Logger.enable();
         Logger.register(o, "Orangutan", "o");
         Logger.register(t1, "Tile", "t1");
         Logger.register(t2, "Tile", "t2");
@@ -535,7 +541,7 @@ public class Menu {
 
         //Inicializalas
         /*for(int i = 30; i >= 0; i--)
-            t2.reduceNumOfSteps();*/        
+            t2.reduceNumOfSteps();
 
         while(!t2.isBroken())
         	t2.reduceNumOfSteps();
@@ -552,5 +558,5 @@ public class Menu {
 
         //Metodus meghivasa
         p.step(t2);
-    }
+    }*/
 }
