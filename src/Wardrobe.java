@@ -15,6 +15,10 @@ public class Wardrobe extends Entity {
 		gm.addSpecificTile(tile, GameMap.Key.Wardrobe);
 	}
 
+	public Wardrobe() {
+
+	}
+
 	/**
 	 * A parameterben megadott orangutan belep a szekrenybe.
 	 */
@@ -61,6 +65,9 @@ public class Wardrobe extends Entity {
 	public void setPreviousExitTile(Tile t) {
 		previousExitTile=t;
 	}
+
+	public void setEntrance(Tile t){entrance=t;}
+
 	public Tile getPreviousExitTile(){ return previousExitTile; }
 	public Tile getEntrance(){ return entrance; }
 }

@@ -1,0 +1,12 @@
+new tile empty t1
+new tile empty t2
+new tile empty t3
+new tile empty t4
+set neighbor t1 t2
+set neighbor t3 t4
+new entity wardrobe w t3 t2
+new panda p t1
+
+step panda t2
+
+stat panda p

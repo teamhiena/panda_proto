@@ -12,7 +12,11 @@ public class DiabeticPanda extends Panda {
 		hatesEntity=GameMap.Key.Automat;
 	}
 
-	//METÓDUSOK
+    public DiabeticPanda() {
+
+    }
+
+    //METÓDUSOK
 	/**
 	 * A pandat megijeszti egy csokiautomata.
 	 */

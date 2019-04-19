@@ -4,11 +4,15 @@ public class WeakTile extends Tile{
 	private int numOfSteps=20;
 	private boolean isBroken=false;
 
-	//METODUSOK
+	//METODUSOK:
 	public void reduceNumOfSteps() {
 		numOfSteps--;
 		if(numOfSteps<=0)
 			isBroken=true;
+	}
+
+	public void setNumOfSteps(int s){
+		numOfSteps=s;
 	}
 	
 	/**
