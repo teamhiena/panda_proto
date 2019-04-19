@@ -78,13 +78,13 @@ public abstract class Panda extends Animal{
 	public void release()
 	{
 		following = null;
-		//isFollowing = false;
-		if(/*isFollowedBy*/followedBy!=null){
+		if(followedBy != null){
 			followedBy.release();
 		}
+		followedBy = null;
 	}
 	
 	public void setNextTile(Tile t) {
-		nextTile=t;
+		nextTile = t;
 	}
 }

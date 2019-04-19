@@ -17,7 +17,6 @@ public abstract class Animal implements Steppable{
     }
         
     //METODUSOKK
-
     /**
      * Ez a metodus hivodik meg, amikor az allat "meghal".
      */

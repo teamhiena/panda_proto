@@ -1,22 +1,20 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * A szkeletonhoz tartozo Main osztaly, mely tartalmazza a main() fuggvenyt.
  */
 public class Main {
-    public static void main(String[] args) {
-
-        Menu mainMenu = new Menu();
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        int chosenUseCase = 0;
+        while (true) {
+            String line;
+            line = scanner.nextLine();
 
-        System.out.println("Udv1 a tesztprogramunkban! Kilepes '0'-val\n");
-        do {
-            mainMenu.show();
-            chosenUseCase = Integer.parseInt(scanner.nextLine());
-            mainMenu.manageUseCase(chosenUseCase);
-        } while (chosenUseCase != 0);
-        scanner.close();
-        System.out.println("Viszlat!!");
+            if (line == null) break;
+
+            runCommand(line);
+        }
+
     }
 }
