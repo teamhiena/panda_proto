@@ -5,6 +5,28 @@ public class InputLanguage {
 
     private HashMap<String,Object> variables=new HashMap<String,Object>();
     //TODO exceptionök: nem letezika  command,  nem letezik a valtozo/letezik mar amikor letre akarom hozni
+
+    public void addVariable(String key, Object object){
+        if(getVariable(key)==null) {
+            System.out.println("A variable with the same name already exists");
+        }
+        else
+            variables.put(key, object);
+    }
+
+    public Object getVariable(String key){
+        Object ret=null;
+        try{
+            ret=variables.get(key);
+        }
+        catch(Exception e){
+            System.out.println("Variable does not exist");
+            return null;
+        }
+        return  ret;
+
+    }
+
     class Node{
 
         private String description="";
@@ -24,6 +46,13 @@ public class InputLanguage {
 
         public Object search(String key) {
             //System.out.println("executing "+this.description+" returning: "+next.get(key).description+" key: "+key);
+            Object ret;
+            try{
+                ret=next.get(key);
+            }catch (Exception e){
+                System.out.println("Unknown keyword: '"+key+"'");
+                return null;
+            }
             return next.get(key);
         }
 
@@ -55,15 +84,19 @@ public class InputLanguage {
         root.addNext(new Node("release"));
         root.addNext(new Node("makeeffect"));
         root.addNext(new Node("output"));
-        //root.addNext(new Node("test"));
+        root.addNext(new Node("test"));
 
             //INIT NEW
             newNode = new Node("tile");
             tmp.addNext(newNode);
             tmp.addNext(new Leaf("orangutan") {
             public Object execute(Object o_param) {
-                String descr=(String) o_param;
-                return new Orangutan();
+                String[] parameters=(String[]) o_param;
+                Orangutan o=new Orangutan();
+                o.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                System.out.println("CREATING ORANGUTAN ; name="+parameters[3]);
+                variables.put(parameters[3],o);
+                return o;
             }
             });
             tmp.addNext(new Node("panda"));
@@ -75,7 +108,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         WeakTile t=new WeakTile();
-                        //System.out.println("CREATING WEAK TILE ; name="+parameters[3]);
+                        System.out.println("CREATING WEAK TILE ; name="+parameters[3]);
                         variables.put(parameters[3],t);
                         return t;
                     }
@@ -85,7 +118,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         Tile t=new Tile();
-                        //System.out.println("CREATING TILE ; name="+parameters[3]);
+                        System.out.println("CREATING TILE ; name="+parameters[3]);
                         variables.put(parameters[3],t);
                         return t;
                     }
@@ -94,7 +127,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         EntryTile t=new EntryTile();
-                        //System.out.println("CREATING ENTRY TILE ; name="+parameters[3]);
+                        System.out.println("CREATING ENTRY TILE ; name="+parameters[3]);
                         variables.put(parameters[3],t);
                         return t;
                     }
@@ -103,7 +136,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         ExitTile t=new ExitTile();
-                        //System.out.println("CREATING EXIT TILE ; name="+parameters[3]);
+                        System.out.println("CREATING EXIT TILE ; name="+parameters[3]);
                         variables.put(parameters[3],t);
                         return t;
                     }
@@ -115,9 +148,9 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         Wardrobe w=new Wardrobe();
-                        w.setTile((Tile)variables.get(parameters[4])); //ELÉG RISKY SOR
-                        w.setEntrance((Tile)variables.get(parameters[5]));
-                        //System.out.println("CREATING WARDROBE ENTITY ; name="+parameters[3]);
+                        w.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                        w.setEntrance((Tile)getVariable(parameters[5]));
+                        System.out.println("CREATING WARDROBE ENTITY ; name="+parameters[3]);
                         variables.put(parameters[3],w);
                         return w;
                     }
@@ -126,8 +159,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         Arcade a=new Arcade();
-                        a.setTile((Tile)variables.get(parameters[4])); //ELÉG RISKY SOR
-                        //System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
+                        a.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                        System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
                         variables.put(parameters[3],a);
                         return a;
                     }
@@ -136,8 +169,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         Automat a=new Automat();
-                        a.setTile((Tile)variables.get(parameters[4])); //ELÉG RISKY SOR
-                        //System.out.println("CREATING AUTOMAT ENTITY ; name="+parameters[3]);
+                        a.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                        System.out.println("CREATING AUTOMAT ENTITY ; name="+parameters[3]);
                         variables.put(parameters[3],a);
                         return a;
                     }
@@ -147,8 +180,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         Fotel f=new Fotel();
-                        f.setTile((Tile)variables.get(parameters[4])); //ELÉG RISKY SOR
-                        //System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
+                        f.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                        System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
                         variables.put(parameters[3],f);
                         return f;
                     }
@@ -160,8 +193,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         DiabeticPanda p=new DiabeticPanda();
-                        p.setTile((Tile)variables.get(parameters[4])); //ELÉG RISKY SOR
-                        //System.out.println("CREATING DIABETIC PANDA ; name="+parameters[3]);
+                        p.setTile((Tile)getVariable(parameters[4])); //ELÉG RISKY SOR
+                        System.out.println("CREATING DIABETIC PANDA ; name="+parameters[3]);
                         variables.put(parameters[3],p);
                         return p;
                     }
@@ -170,8 +203,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         TiredPanda p=new TiredPanda();
-                        p.setTile((Tile)variables.get(parameters[4]));
-                        //System.out.println("CREATING TIRED PANDA ; name="+parameters[3]);
+                        p.setTile((Tile)getVariable(parameters[4]));
+                        System.out.println("CREATING TIRED PANDA ; name="+parameters[3]);
                         variables.put(parameters[3],p);
                         return p;
                     }
@@ -180,8 +213,8 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
                         AfraidPanda p=new AfraidPanda();
-                        p.setTile((Tile)variables.get(parameters[4]));
-                        //System.out.println("CREATING AFRAID PANDA ; name="+parameters[3]);
+                        p.setTile((Tile)getVariable(parameters[4]));
+                        System.out.println("CREATING AFRAID PANDA ; name="+parameters[3]);
                         variables.put(parameters[3],p);
                         return p;
                     }
@@ -192,9 +225,9 @@ public class InputLanguage {
             tmp.addNext(new Leaf("panda") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;
-                    Panda p=(Panda)variables.get(parameters[2]);
-                    Tile t=(Tile)variables.get(parameters[3]);
-                    //System.out.println("STEPPING "+parameters[2]+" to "+parameters[3]);
+                    Panda p=(Panda)getVariable(parameters[2]);
+                    Tile t=(Tile)getVariable(parameters[3]);
+                    System.out.println("STEPPING "+parameters[2]+" to "+parameters[3]);
                     p.step(t);
                     return p;
                 }
@@ -202,9 +235,9 @@ public class InputLanguage {
             tmp.addNext(new Leaf("orangutan") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;
-                    Orangutan o=(Orangutan)variables.get(parameters[2]);
-                    Tile t=(Tile)variables.get(parameters[3]);
-                    //System.out.println("STEPPING "+parameters[2]+" to "+parameters[3]);
+                    Orangutan o=(Orangutan)getVariable(parameters[2]);
+                    Tile t=(Tile)getVariable(parameters[3]);
+                    System.out.println("STEPPING "+parameters[2]+" to "+parameters[3]);
                     o.step(t);
                     return o;
                 }
@@ -215,11 +248,11 @@ public class InputLanguage {
             tmp.addNext(new Leaf("neighbor") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;
-                    Tile t=(Tile)variables.get(parameters[2]);
+                    Tile t=(Tile)getVariable(parameters[2]);
                     Tile nt;
-                    //System.out.println("SETTING NEIGHBORS OF : "+parameters[2]);
+                    System.out.println("SETTING NEIGHBORS OF : "+parameters[2]);
                     for (int i=1;i<parameters.length;i++){
-                        nt=(Tile)variables.get(parameters[i]);
+                        nt=(Tile)getVariable(parameters[i]);
                         t.addNeighbor(nt);
                         nt.addNeighbor(t);
                     }
@@ -229,9 +262,9 @@ public class InputLanguage {
             tmp.addNext(new Leaf("numOfSteps") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;
-                    WeakTile t=(WeakTile)variables.get(parameters[2]);
+                    WeakTile t=(WeakTile)getVariable(parameters[2]);
                     t.setNumOfSteps(Integer.parseInt(parameters[3]));
-                    //System.out.println("SETTING NUMOFSTEPS OF : "+parameters[2]+" to : "+parameters[3]);
+                    System.out.println("SETTING NUMOFSTEPS OF : "+parameters[2]+" to : "+parameters[3]);
                     return t;
                 }
             });
@@ -240,9 +273,9 @@ public class InputLanguage {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     String[] parameters=(String[]) o_param;
-                    Fotel f=(Fotel)variables.get(parameters[2]);
+                    Fotel f=(Fotel)getVariable(parameters[2]);
                     f.setTimeLeft(Integer.parseInt(parameters[3]));
-                    //System.out.println("SETTING TIMELEFT OF : "+parameters[2]+" to : "+parameters[3]);
+                    System.out.println("SETTING TIMELEFT OF : "+parameters[2]+" to : "+parameters[3]);
                     return f;
                 }
             });
@@ -252,7 +285,7 @@ public class InputLanguage {
             tmp.addNext(new Leaf("orangutan") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;
-                    Orangutan o=(Orangutan)variables.get(parameters[2]);
+                    Orangutan o=(Orangutan)getVariable(parameters[2]);
                     o.releasePandas();
                     System.out.println("RELEASING PANDAS OF "+parameters[2]);
                     return o;
@@ -304,21 +337,21 @@ public class InputLanguage {
             });
 
             //INIT TEST
-            /*tmp=root.next.get("test");
+            tmp=root.next.get("test");
             tmp.addNext(new Leaf("all") {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     //TODO mindet teszteljuk
                     return null;
                 }
-            });*/
-            /*tmp.addNext(new Leaf("number") {
+            });
+            tmp.addNext(new Leaf("number") {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     //TODO egy adott tesztet futtatunk, el van picit rejtve egy uj node;
                     return null;
                 }
-            });*/
+            });
 
             //INIT STAT
             tmp=root.next.get("stat");
@@ -408,8 +441,8 @@ public class InputLanguage {
         //System.out.println("compiling...");
         int i=0;
         //ELMEGYUNK A LEAFHEZ
-        Node n = root.next.get(param[i]);
-        while (n.next.size()!=0){
+        Node n=root.next.get(param[i]);
+        while (n!=null&&n.next.size()!=0){
             n=(Node)(n.search(param[++i]));
         }
         //LEAFET TALALTUNK
