@@ -4,7 +4,7 @@ import java.util.Random;
 /**
  * A fotelt megvalosito osztaly. Ha egy faradekony panda elhalad mellette, akkor leul.
  */
-public class Fotel extends Entity implements MakesEffect{
+public class Fotel extends Entity implements MakeEffect{
 	private Tile enteredFrom=null; //Errol a mezorol lehet belepni a fotelre.
 	private long timeLeft=100; //Ennyi ido van meg hatra.(eddig ul meg ott a panda)
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class InputLanguage {
 
     private HashMap<String,Object> variables=new HashMap<String,Object>();
-    //TODO exceptionök: nem letezika  command, nem letezik a valtozo/letezik mar amikor letre akarom hozni
+    //TODO exceptionök: nem letezika  command,  nem letezik a valtozo/letezik mar amikor letre akarom hozni
     class Node{
 
         private String description="";
@@ -43,6 +43,7 @@ public class InputLanguage {
         init();
     }
     public Node init() {
+        OutputLanguage outputLanguage = new OutputLanguage();
         Node tmp;
         Node newNode;
         //INIT ROOT
@@ -57,7 +58,7 @@ public class InputLanguage {
         root.addNext(new Node("test"));
 
             //INIT NEW
-            newNode=new Node("tile");
+            newNode = new Node("tile");
             tmp.addNext(newNode);
             tmp.addNext(new Leaf("orangutan") {
             public Object execute(Object o_param) {
@@ -314,7 +315,7 @@ public class InputLanguage {
             tmp.addNext(new Leaf("number") {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
-                    //TODO egy adott tezstet futtatunk, el van picit rejtve egy uj node;
+                    //TODO egy adott tesztet futtatunk, el van picit rejtve egy uj node;
                     return null;
                 }
             });
@@ -325,6 +326,7 @@ public class InputLanguage {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     //TODO miklos fuggvenyei
+                    outputLanguage.writePanda((Panda) o_param);
                     return null;
                 }
             });
@@ -332,6 +334,7 @@ public class InputLanguage {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     //TODO miklos fuggvenyei
+                    outputLanguage.writeOrangutan((Orangutan)o_param);
                     return null;
                 }
             });
@@ -339,6 +342,7 @@ public class InputLanguage {
                 public Object execute(Object o_param) {
                     String descr=(String) o_param;
                     //TODO miklos fuggvenyei
+                    //Ez miert kell?
                     return null;
                 }
             });
@@ -347,6 +351,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String descr=(String) o_param;
                         //TODO miklos fuggvenyei
+                        outputLanguage.writeNonEnterableEntity((Arcade)o_param);
                         return null;
                     }
                 };
@@ -355,6 +360,15 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String descr=(String) o_param;
                         //TODO miklos fuggvenyei
+                        outputLanguage.writeNonEnterableEntity((Automat)o_param);
+                        return null;
+                    }
+                });
+                tmp.addNext(new Leaf("fotel") {
+                    public Object execute(Object o_param) {
+                        String descr=(String) o_param;
+                        //TODO miklos fuggvenyei
+                        outputLanguage.writeFotel((Fotel)o_param);
                         return null;
                     }
                 });
@@ -362,13 +376,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String descr=(String) o_param;
                         //TODO miklos fuggvenyei
-                        return null;
-                    }
-                });
-                tmp.addNext(new Leaf("wardrobe") {
-                    public Object execute(Object o_param) {
-                        String descr=(String) o_param;
-                        //TODO miklos fuggvenyei
+                        outputLanguage.writeWardrobe((Wardrobe)o_param);
                         return null;
                     }
                 });
@@ -381,6 +389,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String descr=(String) o_param;
                         //TODO miklos fuggvenyei
+                        outputLanguage.writeTile((Tile)o_param);
                         return null;
                     }
                 });
@@ -388,6 +397,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String descr=(String) o_param;
                         //TODO miklos fuggvenyei
+                        outputLanguage.writeTile((WeakTile)o_param);
                         return null;
                     }
                 });
@@ -395,7 +405,7 @@ public class InputLanguage {
     }
 
     public Object compile(String[] param) {
-        System.out.println("compiling...");
+        //System.out.println("compiling...");
         int i=0;
         //ELMEGYUNK A LEAFHEZ
         Node n=root.next.get(param[i]);
