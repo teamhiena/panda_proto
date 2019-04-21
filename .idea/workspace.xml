@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256f9371-0e44-4cb7-bc94-6760a531f3c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AfraidPanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AfraidPanda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputLanguage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MakesEffect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NonEnterableEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NonEnterableEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object_information.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orangutan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orangutan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputLeanguage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset1.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset1.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset10.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset10.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset11.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset11.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset12.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset12.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset13.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset13.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset14.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset14.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset15.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset15.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset16.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset16.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset17.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset17.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset18.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset18.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset19.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset19.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset2.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset2.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset20.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset20.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset21.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset21.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset3.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset3.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset4.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset4.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset5.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset5.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset6.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset6.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset7.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset7.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset8.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset8.out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset9.in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tesztesetek/teszteset9.out.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/InputLanguage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+            <state relative-caret-position="-481">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#398#411#0" expanded="true" />
@@ -123,14 +68,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fotel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state relative-caret-position="-170">
+              <caret line="6" column="50" lean-forward="true" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
               <folding>
                 <element signature="e#528#529#0" expanded="true" />
                 <element signature="e#547#548#0" expanded="true" />
                 <element signature="e#1133#1134#0" expanded="true" />
                 <element signature="e#1150#1151#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NonEnterableEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -168,6 +122,8 @@
       <find>enable</find>
       <find>register</find>
       <find>variables.get</find>
+      <find>search</find>
+      <find>getva</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -304,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555593442748</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="exceptionhandling">
+      <created>1555865212369</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555865212369</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -321,7 +284,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" weight="0.24504249" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5932886" weight="0.48300284" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -329,7 +292,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5080537" side_tool="true" weight="0.24504249" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4986577" weight="0.33002833" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4986577" visible="true" weight="0.1713881" />
       <window_info anchor="bottom" id="Statistic" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49463087" weight="0.11898017" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -352,7 +315,8 @@
     <MESSAGE value="OutputLeanguage" />
     <MESSAGE value="mikike" />
     <MESSAGE value="gombiInput" />
-    <option name="LAST_COMMIT_MESSAGE" value="gombiInput" />
+    <MESSAGE value="exceptionhandling" />
+    <option name="LAST_COMMIT_MESSAGE" value="exceptionhandling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Automat.java">
@@ -428,19 +392,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OutputLeanguage.java" />
-    <entry file="file://$PROJECT_DIR$/src/NonEnterableEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-462">
@@ -530,10 +481,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NonEnterableEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Fotel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state relative-caret-position="-170">
+          <caret line="6" column="50" lean-forward="true" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
           <folding>
             <element signature="e#528#529#0" expanded="true" />
             <element signature="e#547#548#0" expanded="true" />
@@ -545,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InputLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+        <state relative-caret-position="-481">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#398#411#0" expanded="true" />

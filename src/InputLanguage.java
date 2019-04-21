@@ -7,7 +7,7 @@ public class InputLanguage {
     //TODO exceptionök: nem letezika  command,  nem letezik a valtozo/letezik mar amikor letre akarom hozni
 
     public void addVariable(String key, Object object){
-        if(getVariable(key)==null) {
+        if(getVariable(key)!=null) {
             System.out.println("A variable with the same name already exists");
         }
         else
