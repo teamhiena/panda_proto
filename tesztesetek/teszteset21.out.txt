@@ -1,5 +1,0 @@
-stats of o:
-		Tile: t3
-		nextTile: t4
-		followedBy: null
-		following: null

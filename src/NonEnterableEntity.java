@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Azon osztalyokhoz tartozo absztrakt ososztaly, amelyekbe nem lehet belepni.
  */
-public abstract class NonEnterableEntity extends Entity implements MakesEffect{
+public abstract class NonEnterableEntity extends Entity implements MakeEffect{
 
 	/**
 	 * Ertelemszeruen, ha egy ilyen osztalyba egy orangutan/panda probal belepni, ez nem lesz lehetseges.

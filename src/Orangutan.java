@@ -81,11 +81,10 @@ public class Orangutan extends Animal {
      */
     public void releasePandas()
     {
-        if(/*isFollowing == true*/ following!=null)
+        if(followedBy!=null)
         {
-            following.release();
-            following = null;
-            //isFollowing = false;
+            followedBy.release();
+            followedBy = null;
         }
     }
 }

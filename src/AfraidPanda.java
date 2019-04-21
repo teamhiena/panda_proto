@@ -9,7 +9,7 @@ public class AfraidPanda extends Panda {
 	//KONSTRUKTOROK
 	public AfraidPanda(GameMap gm){
 		map = gm;
-		hatesEntity=GameMap.Key.Arcade;
+		hatesEntity = GameMap.Key.Arcade;
 	}
 
     public AfraidPanda() {
@@ -21,7 +21,7 @@ public class AfraidPanda extends Panda {
 	 * A pandat megijeszti egy jatekgep.
 	 */
     public void affectedBy(Arcade a) {
-		//TODO Rekurzivan elengedik egymast
+		release();
     }
 }
  

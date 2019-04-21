@@ -4,7 +4,7 @@ public abstract class Animal implements Steppable{
     protected Tile tile=null; //Ezen all az allat.
     protected Tile nextTile=null; //Ez lesz a kovetkezo mezo, amire lepni fog.
     protected Panda followedBy=null; //Ez az allat koveti.
-    protected Panda following=null; //Ezt az allatot koveti.
+    protected Animal following=null; //Ezt az allatot koveti.
     //protected boolean isFollowedBy = false; //Megadja, hogy koveti-e valakit.
     //protected boolean isFollowing = false; //Megadja, hogy kovet-e valakit.
     
@@ -17,7 +17,6 @@ public abstract class Animal implements Steppable{
     }
         
     //METODUSOKK
-
     /**
      * Ez a metodus hivodik meg, amikor az allat "meghal".
      */
@@ -73,5 +72,5 @@ public abstract class Animal implements Steppable{
     public abstract boolean getCaughtBy(Orangutan o);
     public Tile getNextTile(){ return nextTile; }
     public Panda getFollowedBy(){ return followedBy; }
-    public Panda getFollowing() { return following; }
+    public Animal getFollowing() { return following; }
 }
