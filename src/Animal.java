@@ -30,7 +30,7 @@ public abstract class Animal implements Steppable{
     /**
     * Following adattag setter fuggvenye.
     */
-	public void setFollowing(Panda p) { following = p; }
+	public void setFollowing(Animal p) { following = p; }
 
     /**
      * isFollowing adattag getter/setter fuggvenye.

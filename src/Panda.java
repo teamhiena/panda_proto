@@ -62,6 +62,7 @@ public abstract class Panda extends Animal{
 			setFollowedBy(o.followedBy);
 			followedBy.setFollowing(this);			
 		}
+		setFollowing(o);
 		o.setFollowedBy(this);
 		return true;
 	}
