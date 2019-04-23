@@ -1,5 +1,5 @@
-stats of o:
-		Tile: t3
-		nextTile: t4
-		followedBy: null
-		following: null
+stats of p:
+Tile: t3
+nextTile: t4
+followedBy: null
+following: null

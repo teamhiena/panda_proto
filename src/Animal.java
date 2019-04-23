@@ -5,8 +5,6 @@ public abstract class Animal implements Steppable{
     protected Tile nextTile=null; //Ez lesz a kovetkezo mezo, amire lepni fog.
     protected Panda followedBy=null; //Ez az allat koveti.
     protected Animal following=null; //Ezt az allatot koveti.
-    //protected boolean isFollowedBy = false; //Megadja, hogy koveti-e valakit.
-    //protected boolean isFollowing = false; //Megadja, hogy kovet-e valakit.
     
     //KONSTRUKTOROK
     public Animal(Tile t) {
