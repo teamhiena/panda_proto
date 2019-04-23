@@ -5,7 +5,7 @@ public class InputLanguage {
 
     OutputLanguage outputLanguage = new OutputLanguage();
 
-    private HashMap<String,Object> variables=new HashMap<String,Object>();
+    public HashMap<String,Object> variables=new HashMap<String,Object>();
 
     public void addVariable(String key, Object object){
         if(variables.get(key)!=null) {
@@ -96,13 +96,13 @@ public class InputLanguage {
                 String[] parameters=(String[]) o_param;
 
                 Orangutan o=new Orangutan();
-                Tile t=(Tile)getVariable(parameters[4]);
+                Tile t=(Tile)getVariable(parameters[3]);
                 if(t==null){
                     return null;
                 }
                 o.setTile(t);
                 t.setAnimal(o);
-                addVariable(parameters[3],o);
+                addVariable(parameters[2],o);
                 //System.out.println("CREATING ORANGUTAN ; name="+parameters[3]);
 
                 return o;
@@ -524,6 +524,7 @@ public class InputLanguage {
                         return null;
                     }
                 });
+                outputLanguage.variables2 = variables;
         return root;
     }
 

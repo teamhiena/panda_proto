@@ -94,7 +94,7 @@ public class Tile {
     public void addNeighbor(Tile t) { neighbors.add(t); }
     //Visszadja a feliratkozott pandakat.
     public String writeSubbedPandas(){
-        String ret = null;
+        String ret = "";
         for(int i = 0; i < subbedPandas.size(); i++) {
             ret += subbedPandas.get(i).toString() + " ";
         }
@@ -102,7 +102,7 @@ public class Tile {
     }
     //Visszadja a szomszedokat.
     public String writeNeighbors(){
-        String ret = null;
+        String ret = "";
         for(int i = 0; i < neighbors.size(); i++) {
             ret += neighbors.get(i).toString() + " ";
         }
