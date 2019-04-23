@@ -35,7 +35,7 @@ public class Tile {
         else if (entity != null) { //ha van ott entity akkor attol fugg
             success = entity.stepIn(p);
         }
-        else if (entity == null){
+        if (success) { //entity==null
             if(p.followedBy!=null)
                 p.followedBy.setNextTile(p.tile);
             this.setAnimal(p);
@@ -60,21 +60,19 @@ public class Tile {
 
     public boolean receiveAnimal(Orangutan o) {
         boolean success=true;
-        if(entity != null)//Ha van ott entiy akk megprobalok belelepni.
-            success = entity.stepIn(o); //Ha nem enterable vagy panda ul benne akkor false.
+        if(entity != null)//Ha van ott entiy akk megprobalok belelepni. (ami nem fotel az return false)
+            success = entity.stepIn(o);
         else if(animal != null) {
             success=animal.getCaughtBy(o);
         }
-        else if (entity == null){
-            if (o.followedBy!=null)
+        if(success) {
+            if (o.followedBy != null)
                 o.followedBy.setNextTile(o.tile);
+
             this.setAnimal(o);
             o.getTile().setAnimal(null);
             o.setTile(this);
         }
-
-        //Nincs ott allat de olyan entity van amibe (most) nem lehet belelepni
-        //pl nonenterableentity vagy egy hasznalatban levo fotel
         return success;
     }
     // Eltavolitja a Pandat a Tile szomszedos Tile-jainak feliratkozoi kozul
