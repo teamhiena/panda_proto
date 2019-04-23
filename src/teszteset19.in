@@ -1,0 +1,6 @@
+new tile empty t1
+new tile empty t2
+new panda p t1
+new entity automat a t2
+step panda p t2
+stat panda p
