@@ -561,5 +561,4 @@ public class InputLanguage {
         }
         return ret;
     }
-
 }
