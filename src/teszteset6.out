@@ -4,12 +4,12 @@ nextTile: null
 followedBy: null
 following: null
 score: 0
-stats of: f1
+stats of: f
 tile: ft
 enteredFrom: null
 timeleft: 100
 stats of: ft	
-entity: fotel
+entity: f
 animal: null
 subbedPandas: null
 neighbors: ot

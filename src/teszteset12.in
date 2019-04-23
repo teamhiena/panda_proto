@@ -2,7 +2,7 @@ new tile empty t1
 new tile empty t2
 new tile empty t3
 new tile empty t4
-new tile empty t6
+new tile empty t5
 set neighbor t1 t2
 set neighbor t1 t3
 set neighbor t1 t4

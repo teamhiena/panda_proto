@@ -6,5 +6,5 @@ set neighbor ft ot
 step orangutan o ft
 stat orangutan o
 stat entity fotel f
-stat tile strong  ft
+stat tile strong ft
 stat tile strong ot
