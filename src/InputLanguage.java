@@ -469,6 +469,7 @@ public class InputLanguage {
                     return null;
                 }
             });
+            tmp=root.next.get("stat").next.get("entity");
                 //INIT STAT/ENTITY__________________________________________
                 newNode=new Leaf("arcade") {
                     public Object execute(Object o_param) {
@@ -536,11 +537,12 @@ public class InputLanguage {
             //ELMEGYUNK A LEAFHEZ
             Node n=root.next.get(param[i]);
             while (n!=null&&n.next.size()!=0){
+                System.out.print(n.description+" / ");
                 n=(Node)(n.search(param[++i]));
             }
             //LEAFET TALALTUNK
-
-            if(n!=null/*&&!param[i].equals("stat")*/)
+            System.out.println(n.description);
+            if(n!=null)
                 ret=n.execute(param);
             else
                 System.out.println("Unknown keyword: '"+param[i]+"'");
