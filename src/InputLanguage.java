@@ -559,6 +559,9 @@ public class InputLanguage {
         catch (ClassCastException e){
             System.out.println("Invalid parameter type");
         }
+        catch (NullPointerException e){
+            System.out.println("Something went wrong :( <NullPtrExc>");
+        }
         return ret;
     }
 }

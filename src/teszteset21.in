@@ -9,5 +9,5 @@ set neighbor t4 t5
 new entity wardrobe w t3 t2
 new entity wardrobe w1 t4 t5
 new panda tired p t1
-step panda tired p t2
+step panda p t2
 stat panda p
