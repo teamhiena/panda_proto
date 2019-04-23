@@ -44,9 +44,6 @@ public abstract class Panda extends Animal{
 					newTileNeighbor.addSubbedPanda(this); //Az uj helyen szomszedokra feliratkozasok
 				}			
 			}
-			/*newTile.setAnimal(this);
-			tile.setAnimal(null);
-			tile=newTile;*/
 		}
 		return success;
 	}
@@ -60,16 +57,12 @@ public abstract class Panda extends Animal{
 		{
 			return false;
 		}
-		
-		//setIsFollowing(true);
-		//setFollowing(o);
+
 		if(o.isFollowedBy()){
-			//setIsFollowedBy(true);
 			setFollowedBy(o.followedBy);
 			followedBy.setFollowing(this);			
 		}
 		o.setFollowedBy(this);
-		//o.setIsFollowedBy(true);
 		return true;
 	}
 	/**
@@ -78,6 +71,7 @@ public abstract class Panda extends Animal{
 	public void release()
 	{
 		following = null;
+		nextTile = null;
 		if(followedBy != null){
 			followedBy.release();
 		}

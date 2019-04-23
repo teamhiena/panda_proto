@@ -1,5 +1,6 @@
-stats of p1:
-	tile: null
-	nextTile: null
-	followedBy: null
-	following: null
+stats of: o
+tile: null
+nextTile: null
+followedBy: null
+following: null
+score: 0
