@@ -36,6 +36,8 @@ public class Tile {
             success = entity.stepIn(p);
         }
         else if (entity == null){
+            if(p.followedBy!=null)
+                p.followedBy.setNextTile(p.tile);
             this.setAnimal(p);
             p.getTile().setAnimal(null);
             p.setTile(this);
@@ -64,6 +66,8 @@ public class Tile {
             success=animal.getCaughtBy(o);
         }
         else if (entity == null){
+            if (o.followedBy!=null)
+                o.followedBy.setNextTile(o.tile);
             this.setAnimal(o);
             o.getTile().setAnimal(null);
             o.setTile(this);

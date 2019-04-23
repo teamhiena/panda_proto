@@ -9,9 +9,9 @@ public class Orangutan extends Animal {
         game = g;
     }
 
-    public Orangutan() {
+    /*public Orangutan() {
 
-    }
+    }*/
 
     //METODUSOK
     /**
@@ -22,11 +22,11 @@ public class Orangutan extends Animal {
     public boolean step(Tile t) {
         //ha elkap valakit akkor nem kell lepni a tobbi pandanak
         boolean success=t.receiveAnimal(this);
-        if(success)
+        /*if(success)
         {
         	if(followedBy!=null)
         		followedBy.setNextTile(tile);
-        }
+        }*/
         return success;
     }
 

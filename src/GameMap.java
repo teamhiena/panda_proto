@@ -12,7 +12,7 @@ public class GameMap {
 	private ExitTile exit = new ExitTile();
 
 	//KONSTRUKTOROK
-	private GameMap() {
+	public GameMap() {
 		listGetterMap.put(Key.WeakTile, new ArrayList<Tile>()); //TODO kiszedni a weakTile-t külön
 		listGetterMap.put(Key.Arcade, new ArrayList<Tile>());
 		listGetterMap.put(Key.Automat, new ArrayList<Tile>());

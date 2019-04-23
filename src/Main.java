@@ -8,7 +8,11 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        InputLanguage inlang = new InputLanguage();
+        Game game=new Game();
+        GameMap gameMap=new GameMap();
+        //EZEKNEK SINGLETONNAK KELLENE LENNI CSAK NEM TOM AZT HOGY KELL SORRY
+        InputLanguage inlang = new InputLanguage(game,gameMap);
+
         String input = scanner.nextLine();
 
         while (!input.equals("exit")){
