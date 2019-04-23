@@ -12,9 +12,9 @@ public class DiabeticPanda extends Panda {
 		hatesEntity=GameMap.Key.Automat;
 	}
 
-    public DiabeticPanda() {
+    /*public DiabeticPanda() {
 
-    }
+    }*/
 
     //METÓDUSOK
 	/**

@@ -11,9 +11,9 @@ public class TiredPanda extends Panda {
 		map = gm;
 	}
 
-    public TiredPanda() {
+    /*public TiredPanda() {
 
-    }
+    }*/
 
 	//METODUSOK
 

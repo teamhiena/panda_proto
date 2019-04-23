@@ -12,9 +12,9 @@ public class AfraidPanda extends Panda {
 		hatesEntity = GameMap.Key.Arcade;
 	}
 
-    public AfraidPanda() {
+    /*public AfraidPanda() {
 
-    }
+    }*/
 
     //METODUSOK
 	/**

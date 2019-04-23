@@ -4,6 +4,14 @@ import java.util.HashMap;
 public class InputLanguage {
 
     OutputLanguage outputLanguage = new OutputLanguage();
+    private Game game;
+    private GameMap gameMap;
+
+    public InputLanguage(Game g,GameMap gm){
+        game=g;
+        gameMap=gm;
+        init();
+    }
 
     public HashMap<String,Object> variables=new HashMap<String,Object>();
 
@@ -70,9 +78,7 @@ public class InputLanguage {
 
     Node root=new Node("root");
 
-    public InputLanguage(){
-        init();
-    }
+
     public Node init() {
 
         Node tmp;
@@ -95,7 +101,7 @@ public class InputLanguage {
             public Object execute(Object o_param) {
                 String[] parameters=(String[]) o_param;
 
-                Orangutan o=new Orangutan();
+                Orangutan o=new Orangutan(game);
                 Tile t=(Tile)getVariable(parameters[3]);
                 if(t==null){
                     return null;
@@ -233,7 +239,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
 
-                        DiabeticPanda p=new DiabeticPanda();
+                        DiabeticPanda p=new DiabeticPanda(gameMap);
                         Tile t=(Tile)getVariable(parameters[4]);
                         if(t==null){
                             return null;
@@ -249,7 +255,7 @@ public class InputLanguage {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
 
-                        TiredPanda p=new TiredPanda();
+                        TiredPanda p=new TiredPanda(gameMap);
                         Tile t=(Tile)getVariable(parameters[4]);
                         if(t==null){
                             return null;
@@ -264,7 +270,7 @@ public class InputLanguage {
                 tmp.addNext(new Leaf("afraid") {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
-                        AfraidPanda p=new AfraidPanda();
+                        AfraidPanda p=new AfraidPanda(gameMap);
                         Tile t=(Tile)getVariable(parameters[4]);
                         if(t==null){
                             return null;
@@ -537,11 +543,11 @@ public class InputLanguage {
             //ELMEGYUNK A LEAFHEZ
             Node n=root.next.get(param[i]);
             while (n!=null&&n.next.size()!=0){
-                System.out.print(n.description+" / ");
+                //System.out.print(n.description+" / ");
                 n=(Node)(n.search(param[++i]));
             }
             //LEAFET TALALTUNK
-            System.out.println(n.description);
+            //System.out.println(n.description);
             if(n!=null)
                 ret=n.execute(param);
             else
