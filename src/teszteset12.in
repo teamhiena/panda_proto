@@ -19,7 +19,6 @@ step orangutan o1 t1
 step orangutan o1 t3
 step orangutan o1 t4
 makeeffect arcade a
-
 stat orangutan o1
 stat panda p1
 stat panda p2

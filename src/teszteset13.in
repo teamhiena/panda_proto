@@ -2,11 +2,9 @@ new tile empty pt
 new panda tired p pt
 new tile empty ft
 new entity fotel ft
-
 set neighbors ft pt
-step panda  ft
-
+step panda ft
 stat panda p
 stat entity fotel
-stat ft
-stat pt
+stat entity fotel ft
+stat tile strong pt
