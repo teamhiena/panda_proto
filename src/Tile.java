@@ -66,11 +66,15 @@ public class Tile {
             success=animal.getCaughtBy(o);
         }
         if(success) {
-            if (o.followedBy != null)
-                o.followedBy.setNextTile(o.tile);
-
+            if (o.followedBy != null){ //van koveto
+                o.followedBy.setNextTile(this);
+                o.followedBy.setTile(o.tile);
+            }
+            else{ //nincs koveto
+                o.getTile().setAnimal(null);
+            }
             this.setAnimal(o);
-            o.getTile().setAnimal(null);
+            //kesobb el lehet gondolkozni egy setNextTile(null) on is
             o.setTile(this);
         }
         return success;
