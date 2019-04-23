@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 //Kene valami cucc(pl. mainben) ami meghivja majd ennek az osztalynak a megfelelo writeOutput-jat.
 public class OutputLanguage {
 
-    //TODO VALAMI TAGVÁLTOZÓ AZ OUTPUTRA
 
     HashMap<String,Object> variables2=new HashMap<String,Object>();
 
@@ -41,7 +40,7 @@ public class OutputLanguage {
                 +"entity: "+getKeysByValue(variables2,t.getEntity())+"\n"
                 +"animal: "+getKeysByValue(variables2,t.getAnimal())+"\n"
                 +"subbedPandas: "+getKeysByValueList(variables2,t.getSubbedPandas())+"\n"
-                +"neighbors: "+getKeysByValueList(variables2,t.getNeighbors())+"\n");
+                +"neighbors: "+getKeysByValueList(variables2,t.getNeighbors()));
     }
     public void writeWeakTile(WeakTile t){
         System.out.println("stats of: "+getKeysByValue(variables2,t)+"\n"
