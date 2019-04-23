@@ -35,7 +35,7 @@ public class Tile {
         else if (entity != null) { //ha van ott entity akkor attol fugg
             success = entity.stepIn(p);
         }
-        else { //entity==null
+        if (success) { //entity==null
             if(p.followedBy!=null)
                 p.followedBy.setNextTile(p.tile);
             this.setAnimal(p);
@@ -65,20 +65,16 @@ public class Tile {
         else if(animal != null) {
             success=animal.getCaughtBy(o);
         }
-        //ez az else if ez itt mi
-        else if (entity == null) {
+        if(success) {
             if (o.followedBy != null)
                 o.followedBy.setNextTile(o.tile);
 
             this.setAnimal(o);
             o.getTile().setAnimal(null);
             o.setTile(this);
-            }
-
-            //Nincs ott allat de olyan entity van amibe (most) nem lehet belelepni
-            //pl nonenterableentity vagy egy hasznalatban levo fotel
-            return success;
         }
+        return success;
+    }
     // Eltavolitja a Pandat a Tile szomszedos Tile-jainak feliratkozoi kozul
     public void removePandaFromNeighborSubbedPandas(Panda p) {
         for(Tile nt:neighbors)
