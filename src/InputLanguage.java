@@ -375,7 +375,7 @@ public class InputLanguage {
             });
 
             //INIT RELEASE
-            tmp=root.next.get("set");
+            tmp=root.next.get("release");
             tmp.addNext(new Leaf("orangutan") {
                 public Object execute(Object o_param) {
                     String[] parameters=(String[]) o_param;

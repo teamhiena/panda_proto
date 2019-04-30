@@ -72,7 +72,7 @@ public class Tile {
             }
 
             this.setAnimal(o);
-            o.getTile().setAnimal(null);
+            o.getTile().setAnimal(o.followedBy);
             o.setTile(this);
             }
 

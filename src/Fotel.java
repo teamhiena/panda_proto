@@ -26,6 +26,7 @@ public class Fotel extends Entity implements MakeEffect{
 	public boolean stepIn(Panda p) {
 		if (tile.getAnimal()!= null) return false; //Nem valoszinu, hogy szukseges. DE biztonsaagos.
 		enteredFrom = p.getTile();
+		tile.setAnimal(p); //hát a faszomat
 		resetTimeLeft();
 		p.affectedBy(this);
 		return true;		
@@ -35,8 +36,7 @@ public class Fotel extends Entity implements MakeEffect{
 	 * Megmondja, hogy van-e valaki a fotelban.
 	 */
 	public boolean isEmpty() {
-		if(tile.getAnimal() == null) return true;
-		return false;
+		return (tile.getAnimal() == null);
 	}
 
 	/**
