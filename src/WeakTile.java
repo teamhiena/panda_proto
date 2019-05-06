@@ -22,11 +22,12 @@ public class WeakTile extends Tile{
 	 */
 	@Override
     public boolean receiveAnimal(Orangutan o) {
-    	if(isBroken()) {
+		reduceNumOfSteps();
+		if(isBroken()) {
     		o.die();
     		return false;
     	}
-    	reduceNumOfSteps();
+
     	boolean success=false;
     	if(entity!=null)//ha van ott entiy akk megprobalok belelepni
     		success=entity.stepIn(o); //ha nem enterable vagy panda ul benne akk false
@@ -47,11 +48,12 @@ public class WeakTile extends Tile{
 	 */
 	@Override
     public boolean receiveAnimal(Panda p) {
-    	if(isBroken()) {
+		reduceNumOfSteps();
+		if(isBroken()) {
     		p.die();
     		return false;
     	}
-    	reduceNumOfSteps();
+
 		boolean success=false;
 
 		if(!isBroken){

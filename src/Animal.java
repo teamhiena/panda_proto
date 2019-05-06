@@ -19,8 +19,9 @@ public abstract class Animal implements Steppable{
      * Ez a metodus hivodik meg, amikor az allat "meghal".
      */
     public void die(){
-        this.setTile(null);
         this.getTile().setAnimal(null);
+        this.setTile(null);
+
     }
     /**
      * Tile adattag getter/setter fuggvenye.

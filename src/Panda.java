@@ -50,7 +50,7 @@ public abstract class Panda extends Animal{
 
 	/**
 	 * A pandat "elkapja" a parameterben megadott orangutan.
-	 * followedby-okat, following-okat allit
+	 * followedby-okat, following-okat alli
 	 */
 	@Override
 	public boolean getCaughtBy(Orangutan o) {
