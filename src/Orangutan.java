@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Orangutan extends Animal {
     private int score = 0;
+    private int stepCounter = 4;
     private Game game;
 
     public Orangutan(Game g) {
@@ -9,9 +10,6 @@ public class Orangutan extends Animal {
         game = g;
     }
 
-    /*public Orangutan() {
-
-    }*/
 
     //METODUSOK
     /**
@@ -21,12 +19,13 @@ public class Orangutan extends Animal {
     @Override
     public boolean step(Tile t) {
         //ha elkap valakit akkor nem kell lepni a tobbi pandanak
-        boolean success=t.receiveAnimal(this);
+        boolean success = t.receiveAnimal(this);
         /*if(success)
         {
         	if(followedBy!=null)
         		followedBy.setNextTile(tile);
         }*/
+        if(success) stepCounter++;
         return success;
     }
 
@@ -63,11 +62,30 @@ public class Orangutan extends Animal {
     public int getScore() { return score; }
 
     /**
-     * Ertelemszeruen, egy orangutan nem kaphat el egy masik orangutant.
+     * A parameterben megadott orangutan elkapja az orangutant.
      */
     @Override
-    public boolean getCaughtBy(Orangutan o) {
-        return false;
+    public boolean getCaughtBy(Orangutan o)
+    {
+        if(o.getFollowedBy() != null || followedBy == null) return false; //Ha az elkaponak vannak pandai vagy nekunk nincsenek pandaink --> nem tortenik semmi
+
+        //Az orangutanok helyet cserelnek.
+        Tile temp = tile; //Az aktualis orangutan Tile-ja megy a temp-be.
+        tile = o.getTile();
+        o.setTile(temp);
+        o.getTile().setAnimal(o);
+        tile.setAnimal(this);
+
+        //Atadjuk a pandakat.
+        o.setFollowedBy(followedBy);
+        followedBy.setFollowing(o);
+        o.getFollowedBy().setNextTile(o.getTile());
+        followedBy = null;
+
+        //Nullaznunk kell a lepesszamlalot.
+        stepCounter = 0;
+
+        return false; //Ha eddig eljutottunk, mindenkeppen sikeres a belepes.
     }
 
     /**
@@ -87,4 +105,7 @@ public class Orangutan extends Animal {
             followedBy = null;
         }
     }
+
+    public int getStepCounter(){return stepCounter;}
+    public void increaseCounter(){stepCounter++;}
 }
