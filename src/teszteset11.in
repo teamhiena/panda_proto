@@ -14,7 +14,7 @@ new orangutan o1 t2
 new orangutan o2 t4
 step orangutan o1 t1
 step orangutan o1 t3
-step orangutan o2 t1
+step orangutan o2 t3
 stat orangutan o1
 stat orangutan o2
 stat panda p1

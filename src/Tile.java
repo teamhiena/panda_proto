@@ -61,12 +61,12 @@ public class Tile {
         boolean success=true;
         if(entity != null)//Ha van ott entiy akk megprobalok belelepni. (ami nem fotel az return false)
             success = entity.stepIn(o);
-        else if(animal != null) {
-            success=animal.getCaughtBy(o);
+        else if(animal != null && o.getStepCounter() >= 4) {
+            success = animal.getCaughtBy(o);
         }
         //ez az else if ez itt mi
         if(success) {
-            if (o.followedBy!=null){
+            if (o.followedBy != null){
                 o.followedBy.setNextTile(this);
                 o.followedBy.setTile(o.getTile());
             }
