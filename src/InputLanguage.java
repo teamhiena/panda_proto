@@ -125,6 +125,7 @@ public class InputLanguage {
 
                         WeakTile t=new WeakTile();
                         addVariable(parameters[3],t);
+                        gameMap.addSpecificTile(t, GameMap.Key.WeakTile);
                         //System.out.println("CREATING WEAK TILE ; name="+parameters[3]);
                         return t;
                     }
@@ -146,6 +147,7 @@ public class InputLanguage {
 
                         EntryTile t=new EntryTile();
                         addVariable(parameters[3],t);
+                        gameMap.setEntry(t);
                         //System.out.println("CREATING ENTRY TILE ; name="+parameters[3]);
                         return t;
                     }
@@ -156,6 +158,7 @@ public class InputLanguage {
 
                         ExitTile t=new ExitTile();
                         addVariable(parameters[3],t);
+                        gameMap.setExit(t);
                         ///System.out.println("CREATING EXIT TILE ; name="+parameters[3]);
                         return t;
                     }
@@ -166,21 +169,18 @@ public class InputLanguage {
                 tmp.addNext(new Leaf("wardrobe") {
                     public Object execute(Object o_param) {
                         String[] parameters=(String[]) o_param;
-
-                        Wardrobe w=new Wardrobe();
-                        Tile t=(Tile)getVariable(parameters[4]);
-                        if(t==null){
+                        Tile wt=(Tile)getVariable(parameters[4]);
+                        Tile we=(Tile)getVariable(parameters[5]);
+                        if(we==null||wt==null){
                             return null;
                         }
-                        w.setTile(t);
-                        t.setEntity(w);
-                        t=(Tile)getVariable(parameters[5]);
-                        if(t==null){
-                            return null;
-                        }
+                        Wardrobe w=new Wardrobe(we,gameMap);
+                        w.setTile(wt);
+                        wt.setEntity(w);
 
-                        w.setEntrance(t);
                         addVariable(parameters[3],w);
+                        gameMap.addSpecificTile(wt, GameMap.Key.Wardrobe);
+                        gameMap.addSpecificTile(we, GameMap.Key.WardrobeExit);
                         //System.out.println("CREATING WARDROBE ENTITY ; name="+parameters[3]);
                         return w;
                     }
@@ -196,6 +196,7 @@ public class InputLanguage {
                         a.setTile(t);
                         t.setEntity(a);
                         addVariable(parameters[3],a);
+                        gameMap.addSpecificTile(t, GameMap.Key.Arcade);
                         //System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
                         return a;
                     }
@@ -211,6 +212,7 @@ public class InputLanguage {
                         a.setTile(t);
                         t.setEntity(a);
                         addVariable(parameters[3],a);
+                        gameMap.addSpecificTile(t, GameMap.Key.Automat);
                         //System.out.println("CREATING AUTOMAT ENTITY ; name="+parameters[3]);
                         return a;
                     }
@@ -228,6 +230,7 @@ public class InputLanguage {
                         f.setTile(t);
                         t.setEntity(f);
                         addVariable(parameters[3],f);
+                        gameMap.addSpecificTile(t, GameMap.Key.Fotel);
                         //System.out.println("CREATING ARCADE ENTITY ; name="+parameters[3]);
                         return f;
                     }
@@ -559,9 +562,10 @@ public class InputLanguage {
         catch (ClassCastException e){
             System.out.println("Invalid parameter type");
         }
-        catch (NullPointerException e){
+        /*catch (NullPointerException e){
             System.out.println("Something went wrong :( <NullPtrExc>");
-        }
+        }*/
+        //TODO visszakommentezni
         return ret;
     }
 }

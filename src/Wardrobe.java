@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A szekrenyt(Wardrobe) megvalosito osztaly.
@@ -7,16 +8,17 @@ public class Wardrobe extends Entity {
 	private Tile previousExitTile=null; 
 	private Tile entrance;
 	private GameMap map; //TODO: inicializalni
-	 
+
+	/**
+	 *
+	 * @param e : bejarat!!!
+	 * @param gm : gamemap
+	 */
 	public Wardrobe(Tile e, GameMap gm) {
 		entrance=e;
 		map = gm;
-		gm.addSpecificTile(entrance, GameMap.Key.WardrobeExit);
-		gm.addSpecificTile(tile, GameMap.Key.Wardrobe);
-	}
-
-	public Wardrobe() {
-
+		//gm.addSpecificTile(entrance, GameMap.Key.WardrobeExit);
+		//gm.addSpecificTile(tile, GameMap.Key.Wardrobe);
 	}
 
 	/**
@@ -28,15 +30,22 @@ public class Wardrobe extends Entity {
 			return false;
 		}
 		boolean success;
+		Tile exit;
 		do{
-			Tile exit = map.getRandomWardrobeExitTile();
+			do{
+				exit = map.getRandomWardrobeExitTile();
+			}while(entrance==exit);
+
+			if(exit==null) //ha csak egy szekrény van, nem lehet belelepni
+				return false;
+
 			success = o.step(exit);
-			if(success&&o.followedBy!=null) {
+			if(success&&o.followedBy!=null) { //csak akkor áll át hogyha követik
 				previousExitTile=exit;				
 			}
 				
 		}while(!success);
-		return success;
+		return false; //ez azért false mert a hivo(receiveAnimal) atallit egy csomo sarsagot ha ez true
 	}
 
 	/**
@@ -47,16 +56,29 @@ public class Wardrobe extends Entity {
 		if(p.getTile()!= entrance) {
 			return false;
 		}
-		boolean success;
+		boolean success=false;
+		Tile exit;
 		do {
-			if(p.isFollowing())
-				success = p.step(previousExitTile);
-			else {
-				success = p.step(map.getRandomWardrobeExitTile());
-				previousExitTile=null;
+			if(!p.isFollowing()){
+
+				do{
+					exit = map.getRandomWardrobeExitTile();
+				}while(entrance==exit);
+
+				if(exit==null) //ha csak egy szekrény van, nem lehet belelepni
+					return false;
+
+				success = p.step(exit);
 			}
+
+			else {
+				success = p.step(previousExitTile);
+			}
+			if(!p.isFollowedBy())
+				previousExitTile=null;
+
 		}while(!success);
-		return true;
+		return false; //ez azért false mert a hivo(receiveAnimal) atallit egy csomo sarsagot ha ez true
 	}
 
 	/**
