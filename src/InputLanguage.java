@@ -364,14 +364,15 @@ public class InputLanguage {
 
             tmp.addNext(new Leaf("fotelTimeLeft") {
                 public Object execute(Object o_param) {
-                    String descr=(String) o_param;
+                    //String descr=(String) o_param;
                     String[] parameters=(String[]) o_param;
 
                     Fotel f=(Fotel)getVariable(parameters[2]);
                     if(f==null){
                         return null;
                     }
-                    f.setTimeLeft(Integer.parseInt(parameters[3]));
+                    f.setTimeLeft(Integer.parseInt(parameters[3])+1);
+                    f.decrTimeLeft();
                     //System.out.println("SETTING TIMELEFT OF : "+parameters[2]+" to : "+parameters[3]);
                     return f;
                 }

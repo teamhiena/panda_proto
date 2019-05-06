@@ -55,9 +55,8 @@ public abstract class Animal implements Steppable{
     /**
      *
      */
-    public void releaseFollowerRecursively() {
-        //TODO}
-    }
+    /*public void releaseFollowerRecursively() {
+    }*/
     /**
      * Az allatot elkapja egy Panda. Valojaban lehetetlen esemeny, de muszaj megvalositani.
      * @param p

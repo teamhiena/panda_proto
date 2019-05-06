@@ -53,7 +53,7 @@ public class Fotel extends Entity implements MakeEffect{
 			do {
 				success=tile.getAnimal().step(enteredFrom);				
 			} while(!success);
-			
+			enteredFrom=null;
 		}
 	}
 	/**
@@ -67,7 +67,7 @@ public class Fotel extends Entity implements MakeEffect{
     public Panda getRandomSubbedPanda(){
     	int a = tile.getSubbedPandas().size();
     	Random vel = new Random();
-    	Panda ret  = tile.getSubbedPandas().get(vel.nextInt(tile.getSubbedPandas().size()));
+    	Panda ret  = tile.getSubbedPandas().get(a);
     	return ret;
     }
 
