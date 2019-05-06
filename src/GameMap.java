@@ -50,9 +50,14 @@ public class GameMap {
 	 * Visszater egy veletlenszeruen kivalasztott szekreny kijarattal.
 	 */
 	public Tile getRandomWardrobeExitTile() {
-		Random vel = new Random();
-		Tile t = listGetterMap.get(Key.WardrobeExit).get(vel.nextInt(listGetterMap.get(Key.WardrobeExit).size()));
-		return t;
+		Random rng = new Random();
+		ArrayList<Tile> exits=getSpecificTiles(Key.WardrobeExit);
+		if (exits.size()<2)
+			return null;
+		Integer idx=rng.nextInt(exits.size());
+		Tile ret=exits.get(idx);
+		//System.out.println(idx);
+		return ret;
 	}
 
 	/**
@@ -79,14 +84,15 @@ public class GameMap {
 	/**
 	 * Visszaadja a gyenge csempeket.
 	 */
-	public ArrayList<WeakTile> getWeakTiles(){
-		//TODO
+	/*public ArrayList<WeakTile> getWeakTiles(){
+		//erre valo a getSpecificTiles
 		return new ArrayList<WeakTile>();
-	}
+	}*/
 	/**
 	 * EntryTile adattag setter fuggvenye
 	 */
 	public void setEntry(EntryTile e){
 		entry = e;
 	}
+	public void setExit(ExitTile e) {exit=e;}
 }
