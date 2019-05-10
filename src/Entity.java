@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Egy entitast megvalosito absztrakt ososztaly.
  */
-public abstract class Entity {
+public abstract class  Entity {
 	protected Tile tile;
 	public abstract boolean stepIn(Orangutan a);
 	public abstract boolean stepIn(Panda p);

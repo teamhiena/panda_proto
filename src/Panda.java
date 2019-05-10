@@ -8,7 +8,15 @@ public abstract class Panda extends Animal{
 	//METODUSOK
 	public void affectedBy(Arcade a){ }
 	public void affectedBy(Automat a) { }
-	public void affectedBy(Fotel f) { }
+
+	/**
+	 * stepIn hivja meg, és a timer, a timer azert,
+	 * ha esetleg ketto tiredpanda egyszerre van a szomszedban, ekkor random
+	 * @param f fotel amibe beleul
+	 * @return sikeult-e belelepnie
+	 */
+	public boolean affectedBy(Fotel f) { return false;}
+
 	/**
 	 * Hozzaad egy csempet a panda subbedTiles listajahoz.
 	 */
@@ -40,6 +48,8 @@ public abstract class Panda extends Animal{
 					newTileNeighbor.addSubbedPanda(this); //Az uj helyen szomszedokra feliratkozasok
 				}			
 			}
+			if(isFollowedBy())
+				followedBy.step(newTile);
 		}
 		return success;
 	}

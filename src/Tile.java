@@ -36,8 +36,13 @@ public class Tile {
             success = entity.stepIn(p);
         }
         if (success) {
-            if(p.followedBy!=null)
-                p.followedBy.setNextTile(p.tile);
+
+            if (p.isFollowedBy()){
+
+                p.getFollowedBy().setNextTile(this);
+                p.getFollowedBy().setTile(p.getTile());
+            }
+
             this.setAnimal(p);
             p.getTile().setAnimal(null);
             p.setTile(this);
@@ -64,11 +69,12 @@ public class Tile {
         else if(animal != null && o.getStepCounter() >= 4) {
             success = animal.getCaughtBy(o);
         }
-        //ez az else if ez itt mi
+
         if(success) {
-            if (o.followedBy != null){
-                o.followedBy.setNextTile(this);
-                o.followedBy.setTile(o.getTile());
+            if (o.isFollowedBy()){
+
+                o.getFollowedBy().setNextTile(this);
+                o.getFollowedBy().setTile(o.getTile());
             }
 
             this.setAnimal(o);
