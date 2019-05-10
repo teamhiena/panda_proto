@@ -43,10 +43,16 @@ public class Orangutan extends Animal {
     }
 
     public int getPandaNum() {
-        //return mindfuck recursive fuggveny(?) nem hinnem hogy szukseg van most ra (M)
-        //TODO
-        int ret = 0;
-        return ret;
+        Panda a = this.followedBy;
+        int num = 1;
+        if (a != null) {
+            while (a.followedBy != null) {
+                num++;
+                a = a.followedBy;
+            }
+            return num;
+        }
+        else return 0;
     }
 
     /**
