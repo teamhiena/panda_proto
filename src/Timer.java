@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Timer {
 	ArrayList<NonEnterableEntity> Entities = new ArrayList<>();
@@ -7,6 +8,8 @@ public class Timer {
 	private int elapsedTime = 0;
 	private Game game;
 	private GameMap gamemap;
+	Random random = new Random();
+	int vel = random.nextInt(100);
 
 	static public Timer instance() {
 		if (instance == null) instance = new Timer();
@@ -18,7 +21,20 @@ public class Timer {
 	}
 
 	public void Tick() {
-		//TODO
+		for(int i = 0; i < Steppable.size(); i++)
+		{
+			Steppable steppable = Steppable.get(i);
+			steppable.step(steppable.getNextTile());
+		}
+
+		if(vel % 10 == 0)
+		{
+			for(int j = 0; j < Entities.size(); j++)
+			{
+				Entities.get(j).makeEffect();
+			}
+			vel = random.nextInt(100);
+		}
 		elapsedTime++;
 	}
 
@@ -57,7 +73,7 @@ public class Timer {
 				scores[0]=game.getOrangutans().get(0).getScore() ;
 				scores[1]=game.getOrangutans().get(1).getScore() ;
 
-				game.SaveHighScore(scores[0]>scores[1]? scores[0] : scores[1]);
+				game.SaveHighScore(scores[0]>scores[1] ? scores[0] : scores[1]);
 			} else {
 				game.SaveHighScore(game.getOrangutans().get(0).getScore());
 			}
