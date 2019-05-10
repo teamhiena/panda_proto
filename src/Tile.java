@@ -114,9 +114,9 @@ public class Tile {
         return ret;
     }
     //Visszadja a szomszedokat.
-    public String writeNeighbors(){
+    public String writeNeighbors() {
         String ret = "";
-        for(int i = 0; i < neighbors.size(); i++) {
+        for (int i = 0; i < neighbors.size(); i++) {
             ret += neighbors.get(i).toString() + " ";
         }
         return ret;
