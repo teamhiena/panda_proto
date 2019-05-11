@@ -1,22 +1,18 @@
 stats of: o1
 tile: t4
-nextTile: null
 followedBy: null
 following: null
 score: 0
 stats of: o2
 tile: t3
-nextTile: null
 followedBy: p2
 following: null
 score: 0
 stats of: p1
 tile: t2
-nextTile: t1
 followedBy: null
 following: p2
 stats of: p2
 tile: t1
-nextTile: t3
 followedBy: p1
 following: o2
