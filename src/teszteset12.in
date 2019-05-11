@@ -12,8 +12,8 @@ set neighbor t3 t4
 set neighbor t3 t5
 set neighbor t4 t5
 new entity arcade a t5
-new panda afraid p1 t1
-new panda tired p2 t3
+new panda afraid p1 t3
+new panda tired p2 t1
 new orangutan o1 t2
 step orangutan o1 t1
 step orangutan o1 t3

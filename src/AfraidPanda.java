@@ -21,7 +21,13 @@ public class AfraidPanda extends Panda {
 	 * A pandat megijeszti egy jatekgep.
 	 */
     public void affectedBy(Arcade a) {
-		release();
+    	Panda p = this.followedBy;
+    	release();
+    	while(p != null){
+    		Panda b = p.followedBy;
+    		p.release();
+    		p = b;
+		}
     }
 }
  
