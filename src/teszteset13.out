@@ -2,7 +2,7 @@ stats of: p
 tile: ft
 followedBy: null
 following: null
-stats of: fotel
+stats of: f
 tile: ft
 enteredFrom: pt
 timeleft: 100
@@ -13,6 +13,6 @@ subbedPandas: null
 neighbors: ot
 stats of: pt
 entity: null
-animal: o
+animal: null
 subbedPandas: null
 neighbors: ft
