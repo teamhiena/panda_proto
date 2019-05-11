@@ -9,6 +9,7 @@ public class ExitTile extends Tile {
         if(o.followedBy != null) {
             o.increaseScore(10*o.getPandaNum());
             o.goToEntry();//  ha ez egyaltalan meg lesz csinalva
+
             Panda a = o.followedBy;
             if (a != null) {
                 while (a != null) {
@@ -20,16 +21,25 @@ public class ExitTile extends Tile {
             }
             o.releasePandas();
             //mi tortenik
-            return true;
+            return false;
+        }
+        boolean success=true;
+        if(entity != null)//Ha van ott entiy akk megprobalok belelepni. (ami nem fotel az return false)
+            success = entity.stepIn(o);
+        else if(animal != null && o.getStepCounter() >= 4) {
+            success = animal.getCaughtBy(o);
         }
 
-        boolean success=false;
-        if(entity!=null)//ha van ott entiy akk megprobalok belelepni
-            success=entity.stepIn(o); //ha nem enterable vagy panda ul benne akk false
-        else if(animal!=null) {
-            success=animal.getCaughtBy(o);
+        if(success) {
+            this.setAnimal(o);
+            //o.getTile().setAnimal(o.followedBy); GOMBA szombat 12:18 szerintem ez kurja el a stepeket
+            o.getTile().setAnimal(null); //GOMBA szombat 12:24 ez a fix
+            o.setTile(this);
         }
-        return false;
+
+        //Nincs ott allat de olyan entity van amibe (most) nem lehet belelepni
+        //pl nonenterableentity vagy egy hasznalatban levo fotel
+        return success;
     }
     @Override
     public boolean receiveAnimal(Panda p) {
@@ -46,10 +56,9 @@ public class ExitTile extends Tile {
             success = entity.stepIn(p);
         }
         if (success) {
-            if(p.followedBy!=null)
-                p.followedBy.setNextTile(p.tile);
             this.setAnimal(p);
-            p.getTile().setAnimal(null);
+            if(p.getTile().getAnimal()==p)
+                p.getTile().setAnimal(null);//lehet hogy elkap egy orangutan es akkor az mar ott van, nem kell kinullazni
             p.setTile(this);
         }
         return success;
