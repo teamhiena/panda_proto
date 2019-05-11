@@ -8,7 +8,7 @@ entity: null
 animal: p
 subbedPandas: null
 neighbors: t1, t3
-numOfSteps: 14
+numOfSteps: 9
 isBroken: false
 stats of: a
 tile: t3
