@@ -12,7 +12,7 @@ public class Arcade extends NonEnterableEntity{
 	public void makeEffect() {
 		ArrayList<Tile> al = this.getTile().getNeighbors();
 		for (int i = 0; i < al.size(); i++) {
-			Panda p = (Panda) al.get(i).getAnimal();
+			Animal p = al.get(i).getAnimal();
 			if (al.get(i).getAnimal() != null) p.affectedBy(this);
 		}
 
