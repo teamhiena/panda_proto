@@ -1,14 +1,14 @@
 stats of: p
-Tile: t1
-nextTile: t2
+Tile: t2
+nextTile: null
 followedBy: null
 following: null
-stats of: t1
+stats of: t2
 entity: null
 animal: p
 subbedPandas: null
-neighbors: t2
-numOfSteps: 8
+neighbors: t1, t3
+numOfSteps: 14
 isBroken: false
 stats of: a
 tile: t3

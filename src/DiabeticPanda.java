@@ -23,8 +23,9 @@ public class DiabeticPanda extends Panda {
     public void affectedBy(Automat a) {
 		if(map.getSpecificTiles(GameMap.Key.WeakTile).contains(this.getTile())){
 			WeakTile t = (WeakTile)this.getTile();
-			for(int i =0; i < 5; i++)
+			for(int i =0; i < 10; i++)
 			t.reduceNumOfSteps();
+			if(t.isBroken()) t.getAnimal().die();
 		}
     }
 }
