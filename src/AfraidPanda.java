@@ -22,6 +22,7 @@ public class AfraidPanda extends Panda {
 	 */
     public void affectedBy(Arcade a) {
     	Panda p = this.followedBy;
+    	this.getFollowing().setFollowedBy(null);
     	release();
     	while(p != null){
     		Panda b = p.followedBy;
