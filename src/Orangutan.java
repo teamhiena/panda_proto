@@ -19,13 +19,15 @@ public class Orangutan extends Animal {
     @Override
     public boolean step(Tile t) {
         //ha elkap valakit akkor nem kell lepni a tobbi pandanak
+        Tile temp=tile;
         boolean success = t.receiveAnimal(this);
-        /*if(success)
-        {
-        	if(followedBy!=null)
-        		followedBy.setNextTile(tile);
-        }*/
-        if(success) stepCounter++;
+
+        if(success){
+            stepCounter++;
+            if(isFollowedBy()){
+                followedBy.step(temp);
+            }
+        }
         return success;
     }
 

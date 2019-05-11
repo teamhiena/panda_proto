@@ -38,6 +38,7 @@ public abstract class Panda extends Animal{
 	 */
 	@Override
 	public boolean step(Tile newTile) {
+		Tile temp=tile;
 		boolean success = newTile.receiveAnimal(this);
 		if(success) {
 			tile.removePandaFromNeighborSubbedPandas(this); //Panda eltavolitasa a szomszedokrol.
@@ -49,7 +50,7 @@ public abstract class Panda extends Animal{
 				}			
 			}
 			if(isFollowedBy())
-				followedBy.step(newTile);
+				followedBy.step(temp);
 		}
 		return success;
 	}

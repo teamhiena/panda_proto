@@ -36,15 +36,9 @@ public class Tile {
             success = entity.stepIn(p);
         }
         if (success) {
-
-            if (p.isFollowedBy()){
-
-                p.getFollowedBy().setNextTile(this);
-                p.getFollowedBy().setTile(p.getTile());
-            }
-
             this.setAnimal(p);
-            p.getTile().setAnimal(null);
+            if(p.getTile().getAnimal()==p)
+                p.getTile().setAnimal(null);//lehet hogy elkap egy orangutan es akkor az mar ott van, nem kell kinullazni
             p.setTile(this);
         }
         return success;
@@ -71,14 +65,9 @@ public class Tile {
         }
 
         if(success) {
-            if (o.isFollowedBy()){
-
-                o.getFollowedBy().setNextTile(this);
-                o.getFollowedBy().setTile(o.getTile());
-            }
-
             this.setAnimal(o);
-            o.getTile().setAnimal(o.followedBy);
+            //o.getTile().setAnimal(o.followedBy); GOMBA szombat 12:18 szerintem ez kurja el a stepeket
+            o.getTile().setAnimal(null); //GOMBA szombat 12:24 ez a fix
             o.setTile(this);
             }
 
