@@ -51,6 +51,9 @@ public abstract class Animal implements Steppable{
         return followedBy != null;
     }
 
+    //public void affectedBy(Entity e) {} //gombi szombat 21:24
+    public void affectedBy(Arcade a){ } //gombi szombat 22:52
+    public void affectedBy(Automat a) { } //gombi szombat 22:52
 
     /**
      * Az allatot elkapja egy Panda. Valojaban lehetetlen esemeny, de muszaj megvalositani.
@@ -63,7 +66,6 @@ public abstract class Animal implements Steppable{
     /**
      * Az allatot elkapja egy orangutan. Leszarmazottakban felulirando.
      */
-    public void affectedBy(Entity e) {} //gombi szombat 21:24
     public abstract boolean getCaughtBy(Orangutan o);
     //public Tile getNextTile(){ return nextTile; }
     public Panda getFollowedBy(){ return followedBy; }

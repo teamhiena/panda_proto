@@ -6,8 +6,8 @@ public abstract class Panda extends Animal{
 	protected GameMap.Key hatesEntity;
 
 	//METODUSOK
-	public void affectedBy(Arcade a){ }
-	public void affectedBy(Automat a) { }
+	//public void affectedBy(Arcade a){ }
+	//public void affectedBy(Automat a) { }
 
 	/**
 	 * stepIn hivja meg, és a timer, a timer azert,
@@ -79,10 +79,7 @@ public abstract class Panda extends Animal{
 	 */
 	public void release()
 	{
-		if(isFollowing()){
-			following.setFollowedBy(null);//gombi esetleg itt baszhatta el a 12est
-			following = null;
-		}
+		following = null;
 
 		//nextTile = null;
 		if(followedBy != null){
