@@ -54,7 +54,7 @@ public class OutputLanguage {
     public void writeOrangutan(Orangutan o){
         System.out.println("stats of: "+getKeysByValue(variables2,o)+"\n"
                 +"tile: "+getKeysByValue(variables2,o.getTile())+"\n"
-                +"nextTile: "+getKeysByValue(variables2,o.getNextTile())+"\n"
+                //+"nextTile: "+getKeysByValue(variables2,o.getNextTile())+"\n"
                 +"followedBy: "+getKeysByValue(variables2,o.getFollowedBy())+"\n"
                 +"following: "+getKeysByValue(variables2,o.getFollowing())+"\n"
                 +"score: "+o.getScore());
@@ -63,7 +63,7 @@ public class OutputLanguage {
     {
         System.out.println("stats of: "+getKeysByValue(variables2,p)+"\n"
                 +"tile: "+getKeysByValue(variables2,p.getTile())+"\n"
-                +"nextTile: "+getKeysByValue(variables2,p.getNextTile())+"\n"
+                //+"nextTile: "+getKeysByValue(variables2,p.getNextTile())+"\n"
                 +"followedBy: "+getKeysByValue(variables2,p.getFollowedBy())+"\n"
                 +"following: "+getKeysByValue(variables2,p.getFollowing()));
     }
@@ -80,7 +80,7 @@ public class OutputLanguage {
     public void writeWardrobe(Wardrobe w){
         System.out.println("stats of: "+getKeysByValue(variables2,w)+"\n"
                 +"tile: "+getKeysByValue(variables2,w.getTile())+"\n"
-                +"previousExitTile: "+getKeysByValue(variables2,w.getPreviousExitTile())+"\n"
+                //+"previousExitTile: "+getKeysByValue(variables2,w.getPreviousExitTile())+"\n"
                 +"entrance: "+getKeysByValue(variables2,w.getEntrance()));
     }
 }

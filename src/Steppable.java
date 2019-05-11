@@ -3,5 +3,5 @@
  */
 public interface Steppable {
     public boolean step(Tile t);
-    public Tile getNextTile();
+    //public Tile getNextTile();
 }

@@ -5,7 +5,7 @@ import java.util.Random;
  * A szekrenyt(Wardrobe) megvalosito osztaly.
  */
 public class Wardrobe extends Entity {
-	private Tile previousExitTile=null; 
+	//private Tile previousExitTile=null;
 	private Tile entrance;
 	private GameMap map; //TODO: inicializalni
 
@@ -40,9 +40,9 @@ public class Wardrobe extends Entity {
 				return false;
 
 			success = o.step(exit);
-			if(success&&o.followedBy!=null) { //csak akkor áll át hogyha követik
+			/*if(success&&o.followedBy!=null) { //csak akkor áll át hogyha követik
 				previousExitTile=exit;				
-			}
+			}*/
 				
 		}while(!success);
 		return false; //ez azért false mert a hivo(receiveAnimal) atallit egy csomo sarsagot ha ez true
@@ -59,7 +59,7 @@ public class Wardrobe extends Entity {
 		boolean success=false;
 		Tile exit;
 		do {
-			if(!p.isFollowing()){
+			if(!p.isFollowing()){ //tulajdonkepp mindegy aki beleő ugyse followol
 
 				do{
 					exit = map.getRandomWardrobeExitTile();
@@ -71,11 +71,11 @@ public class Wardrobe extends Entity {
 				success = p.step(exit);
 			}
 
-			else {
+			/*else {
 				success = p.step(previousExitTile);
 			}
 			if(!p.isFollowedBy())
-				previousExitTile=null;
+				previousExitTile=null;*/
 
 		}while(!success);
 		return false; //ez azért false mert a hivo(receiveAnimal) atallit egy csomo sarsagot ha ez true
@@ -84,12 +84,12 @@ public class Wardrobe extends Entity {
 	/**
 	 * A previousExitTile adattag setter fuggvenye.
 	 */
-	public void setPreviousExitTile(Tile t) {
+	/*public void setPreviousExitTile(Tile t) {
 		previousExitTile=t;
-	}
+	}*/
 
 	public void setEntrance(Tile t){entrance=t;}
 
-	public Tile getPreviousExitTile(){ return previousExitTile; }
+	//public Tile getPreviousExitTile(){ return previousExitTile; }
 	public Tile getEntrance(){ return entrance; }
 }

@@ -28,13 +28,13 @@ public class Game{
 	 * Kezeli az orangutan kilepeset.
 	 */
 	//TODO: ez csak kilepteti az orangutant, de az ot koveto pandakat nem kezeli
-	public void exiting(Orangutan o) {
+	/*public void exiting(Orangutan o) {
 		int num = o.getPandaNum(); //Az orangutant koveto pandak szama.
 		if (num >= 5)               //Ha tobb mint 5.
 			this.reward();
 		o.increaseScore(num);       //Noveli az orangutan pontjait.
 		o.goToEntry();               //A bejarathoz helyezi az orangutant.
-	}
+	}*/
 
 	/**
 	 * Kezeli a jutalmat 5 kivitt panda utan.

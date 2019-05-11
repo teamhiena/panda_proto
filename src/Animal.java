@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public abstract class Animal implements Steppable{
-    protected Tile tile=null; //Ezen all az allat.
-    protected Tile nextTile=null; //Ez lesz a kovetkezo mezo, amire lepni fog.
+    protected Tile tile; //Ezen all az allat.
+    //protected Tile nextTile=null; //Ez lesz a kovetkezo mezo, amire lepni fog.
     protected Panda followedBy=null; //Ez az allat koveti.
     protected Animal following=null; //Ezt az allatot koveti.
     
@@ -37,8 +37,7 @@ public abstract class Animal implements Steppable{
      * isFollowing adattag getter/setter fuggvenye.
      */
     public boolean isFollowing() {
-        if(following != null) return true;
-        return false;
+        return following != null;
     }
     /**
      * FollowedBy adattag setter fuggvenye.
@@ -49,17 +48,13 @@ public abstract class Animal implements Steppable{
      * isFollowedBy adattag getter/setter fuggvenye.
      */
     public boolean isFollowedBy() {
-        if(followedBy!=null) return true;
-    	return false;
+        return followedBy != null;
     }
-    /**
-     *
-     */
-    /*public void releaseFollowerRecursively() {
-    }*/
+
+
     /**
      * Az allatot elkapja egy Panda. Valojaban lehetetlen esemeny, de muszaj megvalositani.
-     * @param p
+     * @param p elkapo panda
      */
     public boolean getCaughtBy(Panda p){
         return false;
@@ -70,7 +65,7 @@ public abstract class Animal implements Steppable{
      */
     public void affectedBy(Entity e) {} //gombi szombat 21:24
     public abstract boolean getCaughtBy(Orangutan o);
-    public Tile getNextTile(){ return nextTile; }
+    //public Tile getNextTile(){ return nextTile; }
     public Panda getFollowedBy(){ return followedBy; }
     public Animal getFollowing() { return following; }
 }

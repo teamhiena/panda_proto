@@ -24,7 +24,7 @@ public class Timer {
 		for(int i = 0; i < Steppable.size(); i++)
 		{
 			Steppable steppable = Steppable.get(i);
-			steppable.step(steppable.getNextTile());
+			//steppable.step(steppable.getNextTile());
 		}
 
 		if(vel % 10 == 0)

@@ -4,12 +4,15 @@ public class Orangutan extends Animal {
     private int score = 0;
     private int stepCounter = 4;
     private Game game;
+    private Tile nextTile=new Tile();
 
     public Orangutan(Game g) {
         g.addOrangutan(this);
         game = g;
     }
 
+    public Tile getNextTile() {return nextTile;}
+    public void setNextTile(Tile t) {nextTile=t;}
 
     //METODUSOK
     /**
@@ -19,6 +22,7 @@ public class Orangutan extends Animal {
     @Override
     public boolean step(Tile t) {
         //ha elkap valakit akkor nem kell lepni a tobbi pandanak
+        //TODO a nexttile resetjén gondolkozni
         Tile temp=tile;
         boolean success = t.receiveAnimal(this);
 
@@ -87,7 +91,7 @@ public class Orangutan extends Animal {
         //Atadjuk a pandakat.
         o.setFollowedBy(followedBy);
         followedBy.setFollowing(o);
-        o.getFollowedBy().setNextTile(o.getTile());
+        //o.getFollowedBy().setNextTile(o.getTile());
         followedBy = null;
 
         //Nullaznunk kell a lepesszamlalot.

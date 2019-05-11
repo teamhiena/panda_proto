@@ -26,6 +26,10 @@ public class TiredPanda extends Panda {
 		//f.getTile().setAnimal(this);
 		//tile.setAnimal(this);
 		//tile=f.getTile();
+
+		if (isFollowing())
+			release();
+
 		f.resetTimeLeft();
 		f.setEnteredFrom(tile);
 		return true;

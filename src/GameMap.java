@@ -13,7 +13,7 @@ public class GameMap {
 
 	//KONSTRUKTOROK
 	public GameMap() {
-		listGetterMap.put(Key.WeakTile, new ArrayList<Tile>()); //TODO kiszedni a weakTile-t külön
+		listGetterMap.put(Key.WeakTile, new ArrayList<Tile>());
 		listGetterMap.put(Key.Arcade, new ArrayList<Tile>());
 		listGetterMap.put(Key.Automat, new ArrayList<Tile>());
 		listGetterMap.put(Key.Fotel, new ArrayList<Tile>());
