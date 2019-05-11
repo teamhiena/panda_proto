@@ -1,11 +1,11 @@
-stats of: p
+stats of: p1
 Tile: t2
 nextTile: null
 followedBy: null
 following: null
 stats of: t2
 entity: null
-animal: p
+animal: p1
 subbedPandas: null
 neighbors: t1, t3
 numOfSteps: 9
