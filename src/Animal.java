@@ -68,6 +68,7 @@ public abstract class Animal implements Steppable{
     /**
      * Az allatot elkapja egy orangutan. Leszarmazottakban felulirando.
      */
+    public void affectedBy(Entity e) {} //gombi szombat 21:24
     public abstract boolean getCaughtBy(Orangutan o);
     public Tile getNextTile(){ return nextTile; }
     public Panda getFollowedBy(){ return followedBy; }
