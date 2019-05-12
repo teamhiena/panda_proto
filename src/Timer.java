@@ -10,6 +10,7 @@ public class Timer {
 	private GameMap gamemap;
 	Random random = new Random();
 	int vel = random.nextInt(100);
+	//TODO a foteleket is decreselni kell
 
 	static public Timer instance() {
 		if (instance == null) instance = new Timer();
